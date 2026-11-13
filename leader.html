@@ -2,11 +2,27 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob:; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'">
+<meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>리더십 셀프 체크 · 리더십 역량 자기진단</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="직속 팀원이 있는 팀장을 위한 35문항 자기진단이에요. 최근 3개월 동안 한 행동을 떠올려 답하면 잘하고 있는 것과 다음에 키우면 좋을 것을 찾을 수 있어요.">
+<link rel="canonical" href="https://jjeonglee.github.io/self-check/leader.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="셀프 체크">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="리더십 셀프 체크">
+<meta property="og:description" content="직속 팀원이 있는 팀장을 위한 35문항 자기진단이에요. 최근 3개월 동안 한 행동을 떠올려 답하면 잘하고 있는 것과 다음에 키우면 좋을 것을 찾을 수 있어요.">
+<meta property="og:url" content="https://jjeonglee.github.io/self-check/leader.html">
+<meta property="og:image" content="https://jjeonglee.github.io/self-check/og-leader.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="리더십 셀프 체크">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="리더십 셀프 체크">
+<meta name="twitter:description" content="직속 팀원이 있는 팀장을 위한 35문항 자기진단이에요. 최근 3개월 동안 한 행동을 떠올려 답하면 잘하고 있는 것과 다음에 키우면 좋을 것을 찾을 수 있어요.">
+<meta name="twitter:image" content="https://jjeonglee.github.io/self-check/og-leader.png">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root{
   --bg:#F2F0EB; --surface:#FFFFFF; --ink:#4A4642; --body:#5C5853; --muted:#6B665F; --line:#E0DDD6;
@@ -44,7 +60,7 @@
 [hidden]{display:none!important}
 html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 96px)}
 body{margin:0;background:var(--bg);color:var(--ink);
-  font-family:'IBM Plex Sans KR','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;
+  font-family:'SelfCheck Sans KR','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;
   line-height:1.65;word-break:keep-all;-webkit-text-size-adjust:100%}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
 button{font:inherit}
@@ -286,7 +302,7 @@ a.cname{text-decoration:underline;text-underline-offset:3px;text-decoration-colo
 .rp-host{position:fixed;left:0;top:0;width:794px;pointer-events:none;z-index:2147483000}
 .rp-busy{position:fixed;inset:0;z-index:2147483600;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--ink);font-size:15px;text-align:center;padding:24px}
 .rp-busy small{color:var(--muted);font-size:13px}
-.rp-page{width:794px;height:1123px;background:#fff;color:#3F3B37;font-family:'IBM Plex Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;padding:44px 60px 32px;display:flex;flex-direction:column;box-sizing:border-box;overflow:hidden;word-break:keep-all;line-height:1.55;margin-bottom:20px}
+.rp-page{width:794px;height:1123px;background:#fff;color:#3F3B37;font-family:'SelfCheck Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;padding:44px 60px 32px;display:flex;flex-direction:column;box-sizing:border-box;overflow:hidden;word-break:keep-all;line-height:1.55;margin-bottom:20px}
 .rp-page *{box-sizing:border-box}
 .rp-head{flex:0 0 auto;font-size:11px;color:#7A756D;border-bottom:1px solid #E3E0D9;padding-bottom:10px;margin-bottom:22px}
 .rp-body{flex:1 1 auto;min-height:0;overflow:hidden}
@@ -374,6 +390,8 @@ a.cname{text-decoration:underline;text-underline-offset:3px;text-decoration-colo
 .cross{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
 .cross h2{margin:0;font-size:18px;color:var(--ink)}
 .cross .hint{margin:4px 0 0;font-size:14px;color:var(--muted);line-height:1.6}
+.pager-sub{margin:10px 0 0;text-align:center}
+.shared-note{margin:0;font-size:13px;line-height:1.6;color:var(--muted);text-align:center}
 </style>
 </head>
 <body>
@@ -434,6 +452,7 @@ a.cname{text-decoration:underline;text-underline-offset:3px;text-decoration-colo
     <button class="btn btn-ghost" id="prevBtn" type="button">이전</button>
     <button class="btn btn-primary" id="nextBtn" type="button">다음 영역으로</button>
   </div>
+  <p class="pager-sub" id="pagerSub" hidden><a class="link" href="index.html">시작 화면으로 · 응답은 저장돼요</a></p>
   <p class="notice" id="notice" role="status"></p>
 
   <section id="results" hidden aria-labelledby="resTitle">
@@ -453,8 +472,11 @@ a.cname{text-decoration:underline;text-underline-offset:3px;text-decoration-colo
         <button class="link" id="editBtn" type="button">처음 페이지부터 응답 수정하기</button>
         <button class="link reset-btn" id="resetBtn2" type="button">내 응답 지우기</button>
       </div>
+      <p class="shared-note">공용 기기에서 하셨다면 ‘내 응답 지우기’를 누르고, 저장한 PDF도 지운 뒤 나가 주세요.</p>
     </div>
     <div id="crossBox"></div>
+    <div class="tools"><a class="link" href="index.html">시작 화면으로</a><button class="link" id="shareBtn" type="button">이 셀프 체크 공유하기</button></div>
+    <p class="pdfstatus" id="shareStatus" role="status" style="text-align:center"></p>
   </section>
 
   <section class="refs" id="refs" aria-labelledby="refTitle">
@@ -502,35 +524,35 @@ a.cname{text-decoration:underline;text-underline-offset:3px;text-decoration-colo
     <details>
       <summary>참고 자료</summary>
       <ol>
-        <li>Calderon, S., &amp; Newhouse, D. (2025.8). <i>Following the data: The research behind great managers</i>. Google re:Work. <a href="https://rework.withgoogle.com/intl/en/guides/following-the-data-the-research-behind-great-managers" target="_blank" rel="noopener">rework.withgoogle.com</a></li>
-        <li>Staley, O. (2018.2.28). Google is expanding its list of what it takes to be a great manager. Quartz 기사(Nextgov 재게재, 2018년 10가지 행동 목록). <a href="https://www.nextgov.com/digital-government/2018/02/google-expanding-its-list-what-it-takes-be-great-manager/146314/" target="_blank" rel="noopener">nextgov.com</a></li>
-        <li>Bariso, J. (2018). Google spent a decade researching what makes a great boss. They came up with these 10 things. Inc. 칼럼. 재게재본 확인: <a href="https://thedrop.com.au/google-spent-a-decade-researching-what-makes-a-great-boss/" target="_blank" rel="noopener">thedrop.com.au</a></li>
-        <li>Parabol. Google Project Oxygen: The behaviors of great managers (and how to measure them). Google 관리자 피드백 설문 문항 수록. <a href="https://www.parabol.co/agile/team-health-check-tool/google-project-oxygen/" target="_blank" rel="noopener">parabol.co</a></li>
-        <li>Charan, R., Drotter, S., &amp; Noel, J. (2001; 2nd ed. 2011). <i>The Leadership Pipeline: How to Build the Leadership Powered Company</i>. Jossey-Bass. 1장 Six Leadership Passages 발췌본: <a href="https://umassmed.edu/globalassets/human-resources/documents/manage-at-umms/six-leadership-passages.pdf" target="_blank" rel="noopener">umassmed.edu</a></li>
-        <li>Ivey Business Journal. Building leaders at every level: A leadership pipeline. <a href="https://iveybusinessjournal.com/publication/building-leaders-at-every-level-a-leadership-pipeline" target="_blank" rel="noopener">iveybusinessjournal.com</a></li>
-        <li>Charan, R., Drotter, S., &amp; Noel, J. The Leadership Pipeline (2nd ed.). 1장 Six Leadership Passages 발췌(Barnes &amp; Noble 도서 소개 페이지): <a href="https://valsec.barnesandnoble.com/w/leadership-pipeline/ram-charan/1100998461" target="_blank" rel="noopener">barnesandnoble.com</a></li>
-        <li>Edmondson, A. C. (1999). Psychological safety and learning behavior in work teams. <i>Administrative Science Quarterly</i>, 44(2), 350–383. 원문: <a href="https://web.mit.edu/curhan/www/docs/Articles/15341_Readings/Group_Performance/Edmondson%20Psychological%20safety.pdf" target="_blank" rel="noopener">web.mit.edu</a></li>
-        <li>Edmondson, A. C. (2018). <i>The Fearless Organization: Creating Psychological Safety in the Workplace for Learning, Innovation, and Growth</i>. Wiley. 목차(7장 The Leader’s Tool Kit): <a href="https://campusstore.miamioh.edu/fearless-organization-creating/bk/9781119477242" target="_blank" rel="noopener">campusstore.miamioh.edu</a></li>
-        <li>Lean Blog (2020.1). Amy Edmondson on psychological safety, speaking up, and learning at work(Edmondson 인터뷰). <a href="https://www.leanblog.org/2020/01/amy-edmondson-psychological-safety-speaking-up/" target="_blank" rel="noopener">leanblog.org</a></li>
-        <li>McGill University My Healthy Workplace. A foundational block to building a healthy workplace(Edmondson의 권고 정리). <a href="https://www.mcgill.ca/myhealthyworkplace/node/1079" target="_blank" rel="noopener">mcgill.ca</a></li>
-        <li>Kouzes, J. M., &amp; Posner, B. Z. (2012). <i>The Leadership Challenge</i>(5th ed.). Wiley. 다섯 가지 실천과 열 가지 약속, LPI 10점 빈도 척도 정리: University of Calgary HR <a href="https://ucalgary.ca/hr/training-development/custom-programming-facilitation-and-consulting-services/leadership" target="_blank" rel="noopener">ucalgary.ca</a></li>
-        <li>The Leadership Challenge. From research to the art of leadership(LPI 연구 자료). <a href="https://www.leadershipchallenge.com/LeadershipChallenge/media/SiteFiles/research/TLC-Research-to-the-Art-of-Leadership.pdf" target="_blank" rel="noopener">leadershipchallenge.com</a></li>
-        <li>Whitmore, J. (1992; 5th ed. 2017). <i>Coaching for Performance</i>. Nicholas Brealey. Performance Consultants 소개: <a href="https://www.performanceconsultants.com/?p=125" target="_blank" rel="noopener">performanceconsultants.com</a></li>
-        <li>Center for Creative Leadership (2025.8). Use Situation-Behavior-Impact (SBI)™ to understand intent. <a href="https://www.ccl.org/blog/feedback-you-can-fathom/" target="_blank" rel="noopener">ccl.org</a></li>
-        <li>MindTools. The Situation-Behavior-Impact feedback tool(CCL 워크숍 키트 Feedback that Works 언급). <a href="https://www.mindtools.com/ay86376/the-situation-behavior-impact-feedback-tool" target="_blank" rel="noopener">mindtools.com</a></li>
-        <li>Goleman, D. (1998). What makes a leader? <i>Harvard Business Review</i>, 76(6), 93–102. 원문: <a href="https://clc.business.wfu.edu/wp-content/uploads/2017/06/Goleman-1998-What-Makes-a-Leader.pdf" target="_blank" rel="noopener">clc.business.wfu.edu</a></li>
-        <li>Gallup. Q12® Employee Engagement Survey. <a href="https://www.gallup.com/q12-employee-engagement-survey" target="_blank" rel="noopener">gallup.com</a></li>
-        <li>Gallup (2014). The 12 Elements of Engagement(카드). University of North Texas System HR 게시본: <a href="https://webarchive.library.unt.edu/web/20210427210535/https://hr.untsystem.edu/sites/default/files/q12_explanation.pdf" target="_blank" rel="noopener">webarchive.library.unt.edu</a></li>
-        <li>Locke, E. A., &amp; Latham, G. P. (2002). Building a practically useful theory of goal setting and task motivation: A 35-year odyssey. <i>American Psychologist</i>, 57(9), 705–717. 원문: <a href="https://goal-lab.psych.umn.edu/orgpsych/2020/readings/5.%20Motivation/Locke%20&amp;%20Latham%20(2002).pdf" target="_blank" rel="noopener">goal-lab.psych.umn.edu</a></li>
-        <li>Sonnentag, S., &amp; Fritz, C. (2007). The Recovery Experience Questionnaire: Development and validation of a measure for assessing recuperation and unwinding from work. <i>Journal of Occupational Health Psychology</i>, 12(3), 204–221. <a href="https://pubmed.ncbi.nlm.nih.gov/17638488/" target="_blank" rel="noopener">pubmed.ncbi.nlm.nih.gov</a></li>
-        <li>Staw, B. M. (1976). Knee-deep in the big muddy: A study of escalating commitment to a chosen course of action. <i>Organizational Behavior and Human Performance</i>, 16(1), 27–44. <a href="https://doi.org/10.1016/0030-5073(76)90005-2" target="_blank" rel="noopener">doi.org/10.1016/0030-5073(76)90005-2</a></li>
-        <li>FORRT Replication Atlas. Staw(1976) 재현 연구 기록. <a href="https://forrt.org/flora-replication-atlas/doi/10.1016/0030-5073(76)90005-2/" target="_blank" rel="noopener">forrt.org</a></li>
-        <li>Sleesman, D. J., Conlon, D. E., McNamara, G., &amp; Miles, J. E. (2012). Cleaning up the big muddy: A meta-analytic review of the determinants of escalation of commitment. <i>Academy of Management Journal</i>, 55(3), 541–562. <a href="https://doi.org/10.5465/amj.2010.0696" target="_blank" rel="noopener">doi.org/10.5465/amj.2010.0696</a></li>
-        <li>Nembhard, I. M., &amp; Edmondson, A. C. (2006). Making it safe: The effects of leader inclusiveness and professional status on psychological safety and improvement efforts in health care teams. <i>Journal of Organizational Behavior</i>, 27(7), 941–966. 원문: <a href="https://www.utsouthwestern.edu/employees/leadership-programs/leadership-foundations/making-it-safe.pdf" target="_blank" rel="noopener">utsouthwestern.edu</a></li>
-        <li>Detert, J. R., &amp; Burris, E. R. (2007). Leadership behavior and employee voice: Is the door really open? <i>Academy of Management Journal</i>, 50(4), 869–884. <a href="https://doi.org/10.5465/amj.2007.26279183" target="_blank" rel="noopener">doi.org</a></li>
-        <li>Owens, B. P., &amp; Hekman, D. R. (2012). Modeling how to grow: An inductive examination of humble leader behaviors, contingencies, and outcomes. <i>Academy of Management Journal</i>, 55(4), 787–818. 원문 일부: <a href="https://leeds-faculty.colorado.edu/dahe7472/Owens%20and%20Hekman%20Leader%20Humility%202012.pdf" target="_blank" rel="noopener">leeds-faculty.colorado.edu</a></li>
-        <li>Owens, B. P., Johnson, M. D., &amp; Mitchell, T. R. (2013). Expressed humility in organizations: Implications for performance, teams, and leadership. <i>Organization Science</i>, 24(5), 1517–1538. 초록: <a href="https://econpapers.repec.org/RePEc:inm:ororsc:v:24:y:2013:i:5:p:1517-1538" target="_blank" rel="noopener">econpapers.repec.org</a></li>
-        <li>Hu, J., Erdogan, B., Jiang, K., Bauer, T. N., &amp; Liu, S. (2018). Leader humility and team creativity: The role of team information sharing, psychological safety, and power distance. <i>Journal of Applied Psychology</i>, 103(3), 313–323. 초록: <a href="https://pdxscholar.library.pdx.edu/busadmin_fac/96" target="_blank" rel="noopener">pdxscholar.library.pdx.edu</a></li>
+        <li>Calderon, S., &amp; Newhouse, D. (2025.8). <i>Following the data: The research behind great managers</i>. Google re:Work. <a href="https://rework.withgoogle.com/intl/en/guides/following-the-data-the-research-behind-great-managers" target="_blank" rel="noopener noreferrer">rework.withgoogle.com</a></li>
+        <li>Staley, O. (2018.2.28). Google is expanding its list of what it takes to be a great manager. Quartz 기사(Nextgov 재게재, 2018년 10가지 행동 목록). <a href="https://www.nextgov.com/digital-government/2018/02/google-expanding-its-list-what-it-takes-be-great-manager/146314/" target="_blank" rel="noopener noreferrer">nextgov.com</a></li>
+        <li>Bariso, J. (2018). Google spent a decade researching what makes a great boss. They came up with these 10 things. Inc. 칼럼. 재게재본 확인: <a href="https://thedrop.com.au/google-spent-a-decade-researching-what-makes-a-great-boss/" target="_blank" rel="noopener noreferrer">thedrop.com.au</a></li>
+        <li>Parabol. Google Project Oxygen: The behaviors of great managers (and how to measure them). Google 관리자 피드백 설문 문항 수록. <a href="https://www.parabol.co/agile/team-health-check-tool/google-project-oxygen/" target="_blank" rel="noopener noreferrer">parabol.co</a></li>
+        <li>Charan, R., Drotter, S., &amp; Noel, J. (2001; 2nd ed. 2011). <i>The Leadership Pipeline: How to Build the Leadership Powered Company</i>. Jossey-Bass. 1장 Six Leadership Passages 발췌본: <a href="https://umassmed.edu/globalassets/human-resources/documents/manage-at-umms/six-leadership-passages.pdf" target="_blank" rel="noopener noreferrer">umassmed.edu</a></li>
+        <li>Ivey Business Journal. Building leaders at every level: A leadership pipeline. <a href="https://iveybusinessjournal.com/publication/building-leaders-at-every-level-a-leadership-pipeline" target="_blank" rel="noopener noreferrer">iveybusinessjournal.com</a></li>
+        <li>Charan, R., Drotter, S., &amp; Noel, J. The Leadership Pipeline (2nd ed.). 1장 Six Leadership Passages 발췌(Barnes &amp; Noble 도서 소개 페이지): <a href="https://valsec.barnesandnoble.com/w/leadership-pipeline/ram-charan/1100998461" target="_blank" rel="noopener noreferrer">barnesandnoble.com</a></li>
+        <li>Edmondson, A. C. (1999). Psychological safety and learning behavior in work teams. <i>Administrative Science Quarterly</i>, 44(2), 350–383. 원문: <a href="https://web.mit.edu/curhan/www/docs/Articles/15341_Readings/Group_Performance/Edmondson%20Psychological%20safety.pdf" target="_blank" rel="noopener noreferrer">web.mit.edu</a></li>
+        <li>Edmondson, A. C. (2018). <i>The Fearless Organization: Creating Psychological Safety in the Workplace for Learning, Innovation, and Growth</i>. Wiley. 목차(7장 The Leader’s Tool Kit): <a href="https://campusstore.miamioh.edu/fearless-organization-creating/bk/9781119477242" target="_blank" rel="noopener noreferrer">campusstore.miamioh.edu</a></li>
+        <li>Lean Blog (2020.1). Amy Edmondson on psychological safety, speaking up, and learning at work(Edmondson 인터뷰). <a href="https://www.leanblog.org/2020/01/amy-edmondson-psychological-safety-speaking-up/" target="_blank" rel="noopener noreferrer">leanblog.org</a></li>
+        <li>McGill University My Healthy Workplace. A foundational block to building a healthy workplace(Edmondson의 권고 정리). <a href="https://www.mcgill.ca/myhealthyworkplace/node/1079" target="_blank" rel="noopener noreferrer">mcgill.ca</a></li>
+        <li>Kouzes, J. M., &amp; Posner, B. Z. (2012). <i>The Leadership Challenge</i>(5th ed.). Wiley. 다섯 가지 실천과 열 가지 약속, LPI 10점 빈도 척도 정리: University of Calgary HR <a href="https://ucalgary.ca/hr/training-development/custom-programming-facilitation-and-consulting-services/leadership" target="_blank" rel="noopener noreferrer">ucalgary.ca</a></li>
+        <li>The Leadership Challenge. From research to the art of leadership(LPI 연구 자료). <a href="https://www.leadershipchallenge.com/LeadershipChallenge/media/SiteFiles/research/TLC-Research-to-the-Art-of-Leadership.pdf" target="_blank" rel="noopener noreferrer">leadershipchallenge.com</a></li>
+        <li>Whitmore, J. (1992; 5th ed. 2017). <i>Coaching for Performance</i>. Nicholas Brealey. Performance Consultants 소개: <a href="https://www.performanceconsultants.com/?p=125" target="_blank" rel="noopener noreferrer">performanceconsultants.com</a></li>
+        <li>Center for Creative Leadership (2025.8). Use Situation-Behavior-Impact (SBI)™ to understand intent. <a href="https://www.ccl.org/blog/feedback-you-can-fathom/" target="_blank" rel="noopener noreferrer">ccl.org</a></li>
+        <li>MindTools. The Situation-Behavior-Impact feedback tool(CCL 워크숍 키트 Feedback that Works 언급). <a href="https://www.mindtools.com/ay86376/the-situation-behavior-impact-feedback-tool" target="_blank" rel="noopener noreferrer">mindtools.com</a></li>
+        <li>Goleman, D. (1998). What makes a leader? <i>Harvard Business Review</i>, 76(6), 93–102. 원문: <a href="https://clc.business.wfu.edu/wp-content/uploads/2017/06/Goleman-1998-What-Makes-a-Leader.pdf" target="_blank" rel="noopener noreferrer">clc.business.wfu.edu</a></li>
+        <li>Gallup. Q12® Employee Engagement Survey. <a href="https://www.gallup.com/q12-employee-engagement-survey" target="_blank" rel="noopener noreferrer">gallup.com</a></li>
+        <li>Gallup (2014). The 12 Elements of Engagement(카드). University of North Texas System HR 게시본: <a href="https://webarchive.library.unt.edu/web/20210427210535/https://hr.untsystem.edu/sites/default/files/q12_explanation.pdf" target="_blank" rel="noopener noreferrer">webarchive.library.unt.edu</a></li>
+        <li>Locke, E. A., &amp; Latham, G. P. (2002). Building a practically useful theory of goal setting and task motivation: A 35-year odyssey. <i>American Psychologist</i>, 57(9), 705–717. 원문: <a href="https://goal-lab.psych.umn.edu/orgpsych/2020/readings/5.%20Motivation/Locke%20&amp;%20Latham%20(2002).pdf" target="_blank" rel="noopener noreferrer">goal-lab.psych.umn.edu</a></li>
+        <li>Sonnentag, S., &amp; Fritz, C. (2007). The Recovery Experience Questionnaire: Development and validation of a measure for assessing recuperation and unwinding from work. <i>Journal of Occupational Health Psychology</i>, 12(3), 204–221. <a href="https://pubmed.ncbi.nlm.nih.gov/17638488/" target="_blank" rel="noopener noreferrer">pubmed.ncbi.nlm.nih.gov</a></li>
+        <li>Staw, B. M. (1976). Knee-deep in the big muddy: A study of escalating commitment to a chosen course of action. <i>Organizational Behavior and Human Performance</i>, 16(1), 27–44. <a href="https://doi.org/10.1016/0030-5073(76)90005-2" target="_blank" rel="noopener noreferrer">doi.org/10.1016/0030-5073(76)90005-2</a></li>
+        <li>FORRT Replication Atlas. Staw(1976) 재현 연구 기록. <a href="https://forrt.org/flora-replication-atlas/doi/10.1016/0030-5073(76)90005-2/" target="_blank" rel="noopener noreferrer">forrt.org</a></li>
+        <li>Sleesman, D. J., Conlon, D. E., McNamara, G., &amp; Miles, J. E. (2012). Cleaning up the big muddy: A meta-analytic review of the determinants of escalation of commitment. <i>Academy of Management Journal</i>, 55(3), 541–562. <a href="https://doi.org/10.5465/amj.2010.0696" target="_blank" rel="noopener noreferrer">doi.org/10.5465/amj.2010.0696</a></li>
+        <li>Nembhard, I. M., &amp; Edmondson, A. C. (2006). Making it safe: The effects of leader inclusiveness and professional status on psychological safety and improvement efforts in health care teams. <i>Journal of Organizational Behavior</i>, 27(7), 941–966. 원문: <a href="https://www.utsouthwestern.edu/employees/leadership-programs/leadership-foundations/making-it-safe.pdf" target="_blank" rel="noopener noreferrer">utsouthwestern.edu</a></li>
+        <li>Detert, J. R., &amp; Burris, E. R. (2007). Leadership behavior and employee voice: Is the door really open? <i>Academy of Management Journal</i>, 50(4), 869–884. <a href="https://doi.org/10.5465/amj.2007.26279183" target="_blank" rel="noopener noreferrer">doi.org</a></li>
+        <li>Owens, B. P., &amp; Hekman, D. R. (2012). Modeling how to grow: An inductive examination of humble leader behaviors, contingencies, and outcomes. <i>Academy of Management Journal</i>, 55(4), 787–818. 원문 일부: <a href="https://leeds-faculty.colorado.edu/dahe7472/Owens%20and%20Hekman%20Leader%20Humility%202012.pdf" target="_blank" rel="noopener noreferrer">leeds-faculty.colorado.edu</a></li>
+        <li>Owens, B. P., Johnson, M. D., &amp; Mitchell, T. R. (2013). Expressed humility in organizations: Implications for performance, teams, and leadership. <i>Organization Science</i>, 24(5), 1517–1538. 초록: <a href="https://econpapers.repec.org/RePEc:inm:ororsc:v:24:y:2013:i:5:p:1517-1538" target="_blank" rel="noopener noreferrer">econpapers.repec.org</a></li>
+        <li>Hu, J., Erdogan, B., Jiang, K., Bauer, T. N., &amp; Liu, S. (2018). Leader humility and team creativity: The role of team information sharing, psychological safety, and power distance. <i>Journal of Applied Psychology</i>, 103(3), 313–323. 초록: <a href="https://pdxscholar.library.pdx.edu/busadmin_fac/96" target="_blank" rel="noopener noreferrer">pdxscholar.library.pdx.edu</a></li>
       </ol>
     </details>
     <div class="privacy" id="privacy">
@@ -538,14 +560,14 @@ a.cname{text-decoration:underline;text-underline-offset:3px;text-decoration-colo
       <ul>
         <li>이 진단지는 이름, 연락처, 소속처럼 나를 알아볼 수 있는 정보를 묻지 않아요.</li>
         <li>응답은 지금 쓰는 기기의 브라우저에만 저장되고, 운영자를 포함해 누구에게도 전송되지 않아요. PDF 리포트도 이 기기 안에서 만들어져 바로 저장돼요.</li>
-        <li>화면을 보여주기 위해 글꼴(Google Fonts)과 PDF 도구(cdnjs)를 외부에서 불러와요. 이때 이 서비스들과 페이지를 제공하는 호스팅 서비스에 접속 정보(IP 주소 등)가 전달될 수 있으며, 각 서비스의 방침에 따라 처리돼요.</li>
+        <li>글꼴과 PDF 도구도 이 사이트의 파일을 그대로 쓰고, 다른 서비스에서 불러오지 않아요. 다만 페이지를 제공하는 호스팅 서비스(GitHub Pages)에는 접속 정보(IP 주소 등)가 전달될 수 있으며, 서비스의 방침에 따라 처리돼요.</li>
         <li>저장된 응답은 “내 응답 지우기”를 누르거나 브라우저의 방문 기록·사이트 데이터를 삭제하면 지워져요.</li>
       </ul>
     </div>
   </section>
 </div></main>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="lib/jspdf.umd.min.js"></script>
+<script src="lib/html2canvas.min.js"></script>
 <script>
 const DOMAINS = [
   { id:'1', name:'방향 설정과 의사결정', subs:[
@@ -624,7 +646,12 @@ DOMAINS.forEach(d => d.subs.forEach(s => s.items.forEach(([code,text,f='']) => {
 const itemsOf = d => ALL.filter(i => i.domain === d);
 
 let answers = {};
-try { const raw = localStorage.getItem(KEY); if (raw) answers = JSON.parse(raw) || {}; } catch(e) { answers = {}; }
+// 브라우저 저장 공간의 값은 믿지 않고, 형식에 맞는 것만 받아요(같은 주소의 다른 페이지가 값을 바꿔 둘 수 있어요).
+const CODE_RE = /^[A-Z0-9]{1,2}-\d{1,2}$/, ANS_OK = new Set(['1', '2', '3', '4', 'na']);
+function cleanAnswers(o){ const r = {}; if (o && typeof o === 'object' && !Array.isArray(o)) for (const k of Object.keys(o)) { if (CODE_RE.test(k) && typeof o[k] === 'string' && ANS_OK.has(o[k])) r[k] = o[k]; } return r; }
+function cleanFlags(o){ const r = {}; if (o && typeof o === 'object' && !Array.isArray(o)) for (const k of Object.keys(o)) { if (CODE_RE.test(k) && o[k] === 1) r[k] = 1; } return r; }
+function countOr(v, d){ const n = Number(v); return Number.isInteger(n) && n >= 0 && n <= 1000 ? n : d; }
+try { const raw = localStorage.getItem(KEY); if (raw) answers = cleanAnswers(JSON.parse(raw)); } catch(e) { answers = {}; }
 try { if (!localStorage.getItem(KEY + ':ev5')) { ['1-1','1-2','3-6'].forEach(k => delete answers[k]); localStorage.setItem(KEY, JSON.stringify(answers)); localStorage.setItem(KEY + ':ev5', '1'); } } catch(e) {}
 try { if (!localStorage.getItem(KEY + ':ev6')) { delete answers['5-1']; localStorage.setItem(KEY, JSON.stringify(answers)); localStorage.setItem(KEY + ':ev6', '1'); } } catch(e) {}
 try { if (!localStorage.getItem(KEY + ':ev4')) { ['1-1','2-1','2-4','2-6','3-4','3-6','S-2'].forEach(k => delete answers[k]); localStorage.setItem(KEY, JSON.stringify(answers)); localStorage.setItem(KEY + ':ev4', '1'); } } catch(e) {}
@@ -634,7 +661,7 @@ try { if (!localStorage.getItem(KEY + ':ev1')) { ['1-5','5-5'].forEach(k => dele
 try { if (!localStorage.getItem(KEY + ':pm2')) { ['2-1','2-2','2-3','2-4','2-7'].forEach(k => delete answers[k]); localStorage.setItem(KEY, JSON.stringify(answers)); localStorage.setItem(KEY + ':pm2', '1'); } } catch(e) {}
 function save(){ try { localStorage.setItem(KEY, JSON.stringify(answers)); } catch(e) {} saveMeta(); }
 
-const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function josa(word, withB, withoutB){
   const ch = String(word).replace(/[^가-힣]/g, '').slice(-1);
   if (!ch) return withB;
@@ -723,7 +750,7 @@ function selfMsg(mean){
   if (mean == null) return '';
   const low = mean < TH.lo;
   const SLAB = { 'S-1': '감정 조절', 'S-2': '에너지 회복', 'S-3': '스스로 돌아보기' };
-  const weak = ALL.filter(i => i.domain.self && (answers[i.code] === '1' || answers[i.code] === '2')).map(i => `‘${SLAB[i.code] || i.code}’(${i.code}, ${answers[i.code]}점)`);
+  const weak = ALL.filter(i => i.domain.self && (answers[i.code] === '1' || answers[i.code] === '2')).map(i => `‘${SLAB[i.code] || i.code}’(${i.code}, ${esc(answers[i.code])}점)`);
   let m = low
     ? '지금은 리더 역할을 해낼 마음의 여유와 에너지가 부족한 상태일 수 있어요. 위에서 점수가 낮게 나온 영역이 있다면, 방법을 몰라서라기보다 지치고 바빠서 못 하고 있는 것일 수 있어요. 이럴 때는 리더십 스킬 교육을 듣기 전에 업무 부담을 줄이거나 회복할 시간을 먼저 챙기는 게 도움이 돼요. 그래서 추천 교육의 첫 순서에 회복을 돕는 과정을 넣어 두었어요.'
     : '지금은 리더 역할을 해낼 마음의 여유와 에너지가 어느 정도 있는 상태예요. 그래서 위에서 점수가 낮게 나온 영역이 있다면, 바빠서 못 했다기보다 아직 방법을 잘 모르거나 습관이 되지 않았을 가능성이 커요. 이런 부분은 교육이나 연습으로 채우기 좋아요.';
@@ -797,7 +824,7 @@ function renderResults(){
     ? DOMAINS.filter(d => !d.self).map(d => {
         const its = lowItems.filter(i => i.domain === d).sort((a, b) => (+answers[a.code]) - (+answers[b.code]) || a.code.localeCompare(b.code));
         if (!its.length) return '';
-        return `<div class="lgroup"><div class="lghead"><b>${d.name}</b><span>${its.length}문항</span></div>${its.map(i => `<div class="litem"><span class="c">${i.code}</span><span class="t">${esc(i.text)}</span><span class="p">${answers[i.code]}점</span></div>`).join('')}</div>`;
+        return `<div class="lgroup"><div class="lghead"><b>${d.name}</b><span>${its.length}문항</span></div>${its.map(i => `<div class="litem"><span class="c">${i.code}</span><span class="t">${esc(i.text)}</span><span class="p">${esc(answers[i.code])}점</span></div>`).join('')}</div>`;
       }).join('')
     : `<p class="empty">1점이나 2점으로 답한 문항이 없어요.</p>`;
 
@@ -807,7 +834,7 @@ function renderResults(){
     const sb = band(sst.mean);
     const msg = selfMsg(sst.mean);
     selfCard = `<div class="card"><span class="lbl">자기관리 점검</span><span class="big"><b>${sst.mean.toFixed(2)}</b><span class="badge ${sb}">${BAND[sb]}</span></span><p>${msg}</p>
-      <ul class="mini">${itemsOf(selfD).map(i => `<li><span class="c">${i.code}</span><span>${esc(i.text)}</span><span class="p">${answers[i.code] || '-'}</span></li>`).join('')}</ul></div>`;
+      <ul class="mini">${itemsOf(selfD).map(i => `<li><span class="c">${i.code}</span><span>${esc(i.text)}</span><span class="p">${esc(answers[i.code] || '-')}</span></li>`).join('')}</ul></div>`;
   }
   const sig = ALL.filter(i => i.signal && answers[i.code] === 'na');
   const sigCard = `<div class="card"><span class="lbl">한 번 더 들여다볼 문항</span>${sig.length
@@ -828,7 +855,7 @@ function showPage(p){
   page = p;
   document.getElementById('intro').hidden = p !== 0;
   document.querySelectorAll('section.domain').forEach(s => { s.hidden = +s.dataset.page !== p; });
-  document.getElementById('pager').hidden = !(p >= 1 && p <= LAST);
+  document.getElementById('pager').hidden = !(p >= 1 && p <= LAST); document.getElementById('pagerSub').hidden = !(p >= 1 && p <= LAST);
   document.getElementById('bar').hidden = !(p >= 1 && p <= LAST);
   document.getElementById('results').hidden = p !== LAST + 1;
   document.getElementById('refs').hidden = !(p === 0 || p === LAST + 1);
@@ -949,14 +976,14 @@ function computeRecs(){
 }
 function recReason(x){
   const head = x.dom.name === x.t.name || x.dom.self ? '낮게 답한 문항' : `${x.dom.name} 영역`;
-  if (x.lows.length) return `${head} · ${x.lows.map(i => `${i.code}(${answers[i.code]}점)`).join(', ')}`;
+  if (x.lows.length) return `${head} · ${x.lows.map(i => `${i.code}(${esc(answers[i.code])}점)`).join(', ')}`;
   return `${x.dom.name} 영역 · 평균 ${x.avg.toFixed(1)}점`;
 }
 function hunetCard(c){
-  return `<div class="copt"><span class="ctag">온라인 · 휴넷</span><a class="cname" href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.name)}</a><span class="cmeta">${esc(c.hours)} · ${esc(c.level)} · ${won(c.fee)}</span>${c.refund ? '<span class="cbadge">고용보험 환급 과정</span>' : ''}</div>`;
+  return `<div class="copt"><span class="ctag">온라인 · 휴넷</span><a class="cname" href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">${esc(c.name)}</a><span class="cmeta">${esc(c.hours)} · ${esc(c.level)} · ${won(c.fee)}</span>${c.refund ? '<span class="cbadge">고용보험 환급 과정</span>' : ''}</div>`;
 }
 function kpcCard(c){
-  return `<div class="copt"><span class="ctag">집합 교육 · KPC 한국생산성본부</span><span class="cname">${esc(c.name)}</span><span class="cmeta">${c.days}일(${c.hours}시간) · KPC 회원 ${c.feeM}만원 / 일반 ${c.feeG}만원</span><span class="cmeta">가장 빠른 일정 ${esc(c.next)}${c.count > 1 ? ` 외 ${c.count - 1}회` : ''}</span><span class="cmeta">문의 ${esc(c.tel)}</span><a class="clink" href="${kpcLink(c.name).url}" target="_blank" rel="noopener">KPC 홈페이지 ${esc(kpcLink(c.name).label)}에서 찾기 ›</a></div>`;
+  return `<div class="copt"><span class="ctag">집합 교육 · KPC 한국생산성본부</span><span class="cname">${esc(c.name)}</span><span class="cmeta">${c.days}일(${c.hours}시간) · KPC 회원 ${c.feeM}만원 / 일반 ${c.feeG}만원</span><span class="cmeta">가장 빠른 일정 ${esc(c.next)}${c.count > 1 ? ` 외 ${c.count - 1}회` : ''}</span><span class="cmeta">문의 ${esc(c.tel)}</span><a class="clink" href="${kpcLink(c.name).url}" target="_blank" rel="noopener noreferrer">KPC 홈페이지 ${esc(kpcLink(c.name).label)}에서 찾기 ›</a></div>`;
 }
 function recsEmptyText(long){
   const m = stats(ALL.filter(i => !i.domain.self)).mean;
@@ -1290,7 +1317,7 @@ function renderCross(){
   let answered = 0, total = SIB.total;
   try {
     const meta = JSON.parse(localStorage.getItem(SIB.key + ':meta') || 'null');
-    if (meta && meta.answered) { answered = meta.answered; total = meta.total || total; }
+    if (meta && meta.answered) { answered = countOr(meta.answered, 0); total = countOr(meta.total, total) || total; }
   } catch (e) {}
   const label = answered === 0 ? `${SIB.name} 해 보기` : (answered >= total ? `${SIB.name} 결과 보기` : `${SIB.name} 이어서 하기`);
   const href = SIB.file + (answered > 0 ? '#resume' : '');
@@ -1304,6 +1331,23 @@ function saveMeta(){
     else localStorage.removeItem(KEY + ':meta');
   } catch (e) {}
 }
+async function shareLink(status, title, text){
+  const url = location.href.split('#')[0].split('?')[0];
+  status.textContent = '';
+  if (navigator.share) {
+    try { await navigator.share({ title, text, url }); return; }
+    catch (e) { if (e && e.name === 'AbortError') return; }
+  }
+  try { await navigator.clipboard.writeText(url); status.textContent = '주소를 복사했어요. 붙여 넣어 보내 주세요.'; }
+  catch (e) {
+    const ta = document.createElement('textarea'); ta.value = url; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); status.textContent = '주소를 복사했어요. 붙여 넣어 보내 주세요.'; }
+    catch (e2) { status.textContent = '주소를 복사하지 못했어요. 주소창의 주소를 직접 복사해 주세요.'; }
+    ta.remove();
+  }
+}
+document.getElementById('shareBtn').addEventListener('click', () => shareLink(document.getElementById('shareStatus'), '리더십 셀프 체크', '최근 3개월 동안 한 행동을 떠올려 답하면, 잘하고 있는 것과 다음에 키우면 좋을 것을 찾을 수 있어요.'));
 saveMeta();
 renderForm();
 function setTestMode(on){
