@@ -4,6 +4,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>셀프 체크 · 리더십과 팔로워십</title>
+<meta name="description" content="최근 3개월 동안 일하면서 한 행동을 떠올려 답해 보세요. 리더십과 팔로워십 중에서 골라 잘하고 있는 것과 다음에 키우면 좋을 것을 찾아볼 수 있어요.">
+<link rel="canonical" href="https://jjeonglee.github.io/self-check/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="셀프 체크">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="셀프 체크 · 리더십과 팔로워십">
+<meta property="og:description" content="최근 3개월 동안 일하면서 한 행동을 떠올려 답해 보세요. 리더십과 팔로워십 중에서 골라 잘하고 있는 것과 다음에 키우면 좋을 것을 찾아볼 수 있어요.">
+<meta property="og:url" content="https://jjeonglee.github.io/self-check/">
+<meta property="og:image" content="https://jjeonglee.github.io/self-check/og-index.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="셀프 체크 시작 화면: 리더십과 팔로워십 중에서 고르기">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="셀프 체크 · 리더십과 팔로워십">
+<meta name="twitter:description" content="최근 3개월 동안 일하면서 한 행동을 떠올려 답해 보세요. 리더십과 팔로워십 중에서 골라 잘하고 있는 것과 다음에 키우면 좋을 것을 찾아볼 수 있어요.">
+<meta name="twitter:image" content="https://jjeonglee.github.io/self-check/og-index.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -26,8 +42,7 @@
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--body);font-family:'IBM Plex Sans KR','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
-main{max-width:760px;margin:0 auto;padding:44px 20px 56px;display:flex;flex-direction:column;gap:28px}
-.chip{align-self:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:5px 12px;font-size:13px;font-weight:600;color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:64px 20px 56px;display:flex;flex-direction:column;gap:28px}
 h1{margin:0;font-family:'Gowun Batang','Nanum Myeongjo',serif;font-weight:700;font-size:clamp(28px,6vw,38px);line-height:1.35;color:var(--ink);letter-spacing:-.01em}
 .lead{margin:0;font-size:17px;line-height:1.75;color:var(--body);max-width:36em}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
@@ -37,7 +52,6 @@ a.pick:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 .pick .name{display:flex;align-items:center;gap:10px}
 .pick .sw{width:10px;height:10px;border-radius:2px;background:var(--c);flex:0 0 auto}
 .pick h2{margin:0;font-size:20px;font-weight:600;color:var(--ink);line-height:1.4}
-.pick .sub{margin:-6px 0 0;font-size:14px;color:var(--muted)}
 .pick .who{margin:0;font-size:14px;line-height:1.7;color:var(--body)}
 .pick .facts{margin:0;font-size:13px;color:var(--muted)}
 .pick .state{display:none;flex-direction:column;gap:6px;font-size:13px;color:var(--body)}
@@ -49,18 +63,20 @@ a.pick:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 .note{margin:0;font-size:14px;line-height:1.7;color:var(--body)}
 .small{margin:0;font-size:13px;line-height:1.7;color:var(--muted)}
 .small + .small{margin-top:-18px}
+.share{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.sharebtn{background:var(--surface);color:var(--ink);border:1px solid var(--ink);border-radius:6px;min-height:44px;padding:10px 20px;font:inherit;font-size:15px;font-weight:600;cursor:pointer}
+.sharebtn:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.share .small{margin:0}
 </style>
 </head>
 <body>
 <main>
-  <span class="chip">셀프 체크</span>
-  <h1>어떤 셀프 체크를<br>해 볼까요?</h1>
+  <h1>리더십 · 팔로워십<br>셀프 체크</h1>
   <p class="lead">최근 3개월 동안 일하면서 한 행동을 떠올려 답해 보세요. 잘하고 있는 것과 다음에 키우면 좋을 것을 함께 찾아드릴게요.</p>
 
   <div class="cards">
     <a class="pick" id="pick-leader" href="leader.html" style="--c:var(--lead)">
       <div class="name"><span class="sw" aria-hidden="true"></span><h2>리더십 셀프 체크</h2></div>
-      <p class="sub">팀을 이끄는 나의 모습</p>
       <p class="who">직속 팀원이 있고, 현재 팀을 3개월 이상 이끌고 있는 팀장이에요.</p>
       <p class="facts"><span class="n">35</span>문항 · 10~15분 · PDF 리포트 제공</p>
       <div class="state" aria-live="polite"><span class="st"></span><div class="bar" aria-hidden="true"><i></i></div></div>
@@ -68,7 +84,6 @@ a.pick:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
     </a>
     <a class="pick" id="pick-follower" href="follower.html" style="--c:var(--follow)">
       <div class="name"><span class="sw" aria-hidden="true"></span><h2>팔로워십 셀프 체크</h2></div>
-      <p class="sub">상사·동료와 함께 일하는 나의 모습</p>
       <p class="who">직속 상사가 있고, 현재 팀에서 3개월 이상 일한 구성원이에요. 실무 경력은 대략 4년 이상을 권해요. 팀장이나 임원도 윗사람에게는 팔로워예요.</p>
       <p class="facts"><span class="n">31</span>문항 · 10~15분 · PDF 리포트 제공</p>
       <div class="state" aria-live="polite"><span class="st"></span><div class="bar" aria-hidden="true"><i></i></div></div>
@@ -77,6 +92,7 @@ a.pick:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
   </div>
 
   <p class="note">하나만 해도 되고, 팀장이라면 두 가지를 모두 해 볼 수도 있어요. 두 진단의 응답은 따로 저장돼요.</p>
+  <div class="share"><button class="sharebtn" id="shareBtn" type="button">링크 공유하기</button><span class="small" id="shareStatus" role="status"></span></div>
   <p class="small">응답은 이 기기의 브라우저에만 저장되고, 어디에도 전송되지 않아요.</p>
   <p class="small">연구와 대표적인 실무 모델을 바탕으로 설계한 자기 성찰용 도구이며, 통계적 타당화를 거친 표준화 검사는 아니에요.</p>
 </main>
@@ -111,6 +127,23 @@ CARDS.forEach(c => {
     el.querySelector('.bar i').style.width = Math.min(100, Math.round(answered / total * 100)) + '%';
   }
 });
+async function shareLink(status, title, text){
+  const url = location.href.split('#')[0].split('?')[0];
+  status.textContent = '';
+  if (navigator.share) {
+    try { await navigator.share({ title, text, url }); return; }
+    catch (e) { if (e && e.name === 'AbortError') return; }
+  }
+  try { await navigator.clipboard.writeText(url); status.textContent = '주소를 복사했어요. 붙여 넣어 보내 주세요.'; }
+  catch (e) {
+    const ta = document.createElement('textarea'); ta.value = url; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); status.textContent = '주소를 복사했어요. 붙여 넣어 보내 주세요.'; }
+    catch (e2) { status.textContent = '주소를 복사하지 못했어요. 주소창의 주소를 직접 복사해 주세요.'; }
+    ta.remove();
+  }
+}
+document.getElementById('shareBtn').addEventListener('click', () => shareLink(document.getElementById('shareStatus'), '셀프 체크 · 리더십과 팔로워십', '최근 3개월 동안 한 행동을 떠올려 답하면, 잘하고 있는 것과 다음에 키우면 좋을 것을 찾을 수 있어요.'));
 </script>
 </body>
 </html>
