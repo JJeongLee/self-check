@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>셀프 체크 · 리더십과 팔로워십</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F9F9F6; --surface:#FFFFFF; --ink:#16181D; --body:#3D4048; --muted:#60646D; --line:#E3E4E4; --chip:#EEEEEC;
+  --lead:#E4572E; --follow:#20409A;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#111214; --surface:#1A1B1E; --ink:#F1F1EF; --body:#CFD0D2; --muted:#9A9CA2; --line:#2B2C30; --chip:#232427;
+    --lead:#F07A52; --follow:#8EA3F2;
+    color-scheme:dark;
+  }
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--body);font-family:'IBM Plex Sans KR','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+main{max-width:760px;margin:0 auto;padding:44px 20px 56px;display:flex;flex-direction:column;gap:28px}
+.chip{align-self:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:5px 12px;font-size:13px;font-weight:600;color:var(--ink)}
+h1{margin:0;font-family:'Gowun Batang','Nanum Myeongjo',serif;font-weight:700;font-size:clamp(28px,6vw,38px);line-height:1.35;color:var(--ink);letter-spacing:-.01em}
+.lead{margin:0;font-size:17px;line-height:1.75;color:var(--body);max-width:36em}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+a.pick{display:flex;flex-direction:column;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 22px 20px;color:inherit;text-decoration:none;transition:border-color .15s}
+a.pick:hover{border-color:var(--ink)}
+a.pick:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.pick .name{display:flex;align-items:center;gap:10px}
+.pick .sw{width:10px;height:10px;border-radius:2px;background:var(--c);flex:0 0 auto}
+.pick h2{margin:0;font-size:20px;font-weight:600;color:var(--ink);line-height:1.4}
+.pick .sub{margin:-6px 0 0;font-size:14px;color:var(--muted)}
+.pick .who{margin:0;font-size:14px;line-height:1.7;color:var(--body)}
+.pick .facts{margin:0;font-size:13px;color:var(--muted)}
+.pick .state{display:none;flex-direction:column;gap:6px;font-size:13px;color:var(--body)}
+.pick .state.on{display:flex}
+.pick .bar{height:4px;background:var(--chip);border-radius:2px;overflow:hidden}
+.pick .bar i{display:block;height:100%;background:var(--c);width:0}
+.pick .go{margin-top:auto;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:14px;font-size:15px;font-weight:600;color:var(--ink)}
+.pick .go span:last-child{font-size:18px}
+.note{margin:0;font-size:14px;line-height:1.7;color:var(--body)}
+.small{margin:0;font-size:13px;line-height:1.7;color:var(--muted)}
+.small + .small{margin-top:-18px}
+</style>
+</head>
+<body>
+<main>
+  <span class="chip">셀프 체크</span>
+  <h1>어떤 셀프 체크를<br>해 볼까요?</h1>
+  <p class="lead">최근 3개월 동안 일하면서 한 행동을 떠올려 답해 보세요. 잘하고 있는 것과 다음에 키우면 좋을 것을 함께 찾아드릴게요.</p>
+
+  <div class="cards">
+    <a class="pick" id="pick-leader" href="leader.html" style="--c:var(--lead)">
+      <div class="name"><span class="sw" aria-hidden="true"></span><h2>리더십 셀프 체크</h2></div>
+      <p class="sub">팀을 이끄는 나의 모습</p>
+      <p class="who">직속 팀원이 있고, 현재 팀을 3개월 이상 이끌고 있는 팀장이에요.</p>
+      <p class="facts"><span class="n">35</span>문항 · 10~15분 · PDF 리포트 제공</p>
+      <div class="state" aria-live="polite"><span class="st"></span><div class="bar" aria-hidden="true"><i></i></div></div>
+      <div class="go"><span class="gl">시작하기</span><span aria-hidden="true">→</span></div>
+    </a>
+    <a class="pick" id="pick-follower" href="follower.html" style="--c:var(--follow)">
+      <div class="name"><span class="sw" aria-hidden="true"></span><h2>팔로워십 셀프 체크</h2></div>
+      <p class="sub">상사·동료와 함께 일하는 나의 모습</p>
+      <p class="who">직속 상사가 있고, 현재 팀에서 3개월 이상 일한 구성원이에요. 실무 경력은 대략 4년 이상을 권해요. 팀장이나 임원도 윗사람에게는 팔로워예요.</p>
+      <p class="facts"><span class="n">31</span>문항 · 10~15분 · PDF 리포트 제공</p>
+      <div class="state" aria-live="polite"><span class="st"></span><div class="bar" aria-hidden="true"><i></i></div></div>
+      <div class="go"><span class="gl">시작하기</span><span aria-hidden="true">→</span></div>
+    </a>
+  </div>
+
+  <p class="note">하나만 해도 되고, 팀장이라면 두 가지를 모두 해 볼 수도 있어요. 두 진단의 응답은 따로 저장돼요.</p>
+  <p class="small">응답은 이 기기의 브라우저에만 저장되고, 어디에도 전송되지 않아요.</p>
+  <p class="small">연구와 대표적인 실무 모델을 바탕으로 설계한 자기 성찰용 도구이며, 통계적 타당화를 거친 표준화 검사는 아니에요.</p>
+</main>
+<script>
+// 문항 수가 바뀌면 total을 고쳐 주세요(각 진단이 저장한 값이 있으면 그 값을 우선 써요).
+const CARDS = [
+  { id: 'leader',   key: 'leader-diag-v1',   file: 'leader.html',   total: 35 },
+  { id: 'follower', key: 'follower-diag-v1', file: 'follower.html', total: 31 }
+];
+function readState(c){
+  let answered = 0, total = c.total;
+  try {
+    const meta = JSON.parse(localStorage.getItem(c.key + ':meta') || 'null');
+    if (meta && meta.answered) { answered = meta.answered; total = meta.total || total; }
+    else {
+      const raw = localStorage.getItem(c.key);
+      if (raw) answered = Object.keys(JSON.parse(raw) || {}).length;
+    }
+  } catch (e) {}
+  return { answered, total };
+}
+CARDS.forEach(c => {
+  const el = document.getElementById('pick-' + c.id);
+  const { answered, total } = readState(c);
+  el.querySelector('.n').textContent = total;
+  if (answered > 0) {
+    const done = answered >= total;
+    el.href = c.file + '#resume';
+    el.querySelector('.gl').textContent = done ? '결과 보기' : '이어서 하기';
+    const st = el.querySelector('.state'); st.classList.add('on');
+    el.querySelector('.st').textContent = done ? '응답을 마쳤어요' : `답한 문항 ${answered}/${total}`;
+    el.querySelector('.bar i').style.width = Math.min(100, Math.round(answered / total * 100)) + '%';
+  }
+});
+</script>
+</body>
+</html>
