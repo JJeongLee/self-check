@@ -2,11 +2,27 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob:; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'">
+<meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>팔로워십 셀프 체크 · 팔로워십 역량 자기진단</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="직속 상사가 있는 구성원을 위한 31문항 자기진단이에요. 최근 3개월 동안 한 행동을 떠올려 답하면 잘하고 있는 것과 다음에 키우면 좋을 것을 찾을 수 있어요.">
+<link rel="canonical" href="https://jjeonglee.github.io/self-check/follower.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="셀프 체크">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="팔로워십 셀프 체크">
+<meta property="og:description" content="직속 상사가 있는 구성원을 위한 31문항 자기진단이에요. 최근 3개월 동안 한 행동을 떠올려 답하면 잘하고 있는 것과 다음에 키우면 좋을 것을 찾을 수 있어요.">
+<meta property="og:url" content="https://jjeonglee.github.io/self-check/follower.html">
+<meta property="og:image" content="https://jjeonglee.github.io/self-check/og-follower.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="팔로워십 셀프 체크">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="팔로워십 셀프 체크">
+<meta name="twitter:description" content="직속 상사가 있는 구성원을 위한 31문항 자기진단이에요. 최근 3개월 동안 한 행동을 떠올려 답하면 잘하고 있는 것과 다음에 키우면 좋을 것을 찾을 수 있어요.">
+<meta name="twitter:image" content="https://jjeonglee.github.io/self-check/og-follower.png">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root{
   --bg:#F2F0EB; --surface:#FFFFFF; --ink:#4A4642; --body:#5C5853; --muted:#6B665F; --line:#E0DDD6;
@@ -44,7 +60,7 @@
 [hidden]{display:none!important}
 html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 96px)}
 body{margin:0;background:var(--bg);color:var(--ink);
-  font-family:'IBM Plex Sans KR','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;
+  font-family:'SelfCheck Sans KR','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;
   line-height:1.65;word-break:keep-all;-webkit-text-size-adjust:100%}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
 button{font:inherit}
@@ -286,7 +302,7 @@ a.cname{text-decoration:underline;text-underline-offset:3px;text-decoration-colo
 .rp-host{position:fixed;left:0;top:0;width:794px;pointer-events:none;z-index:2147483000}
 .rp-busy{position:fixed;inset:0;z-index:2147483600;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--ink);font-size:15px;text-align:center;padding:24px}
 .rp-busy small{color:var(--muted);font-size:13px}
-.rp-page{width:794px;height:1123px;background:#fff;color:#16181D;font-family:'IBM Plex Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;padding:44px 60px 32px;display:flex;flex-direction:column;box-sizing:border-box;overflow:hidden;word-break:keep-all;line-height:1.55;margin-bottom:20px}
+.rp-page{width:794px;height:1123px;background:#fff;color:#16181D;font-family:'SelfCheck Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;padding:44px 60px 32px;display:flex;flex-direction:column;box-sizing:border-box;overflow:hidden;word-break:keep-all;line-height:1.55;margin-bottom:20px}
 .rp-page *{box-sizing:border-box}
 .rp-head{flex:0 0 auto;font-size:11px;color:#60646D;border-bottom:1px solid #E3E4E4;padding-bottom:10px;margin-bottom:22px}
 .rp-body{flex:1 1 auto;min-height:0;overflow:hidden}
@@ -406,6 +422,8 @@ body.testmode .tflag{display:flex}
 .cross{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
 .cross h2{margin:0;font-size:18px;color:var(--ink)}
 .cross .hint{margin:4px 0 0;font-size:14px;color:var(--muted);line-height:1.6}
+.pager-sub{margin:10px 0 0;text-align:center}
+.shared-note{margin:0;font-size:13px;line-height:1.6;color:var(--muted);text-align:center}
 </style>
 </head>
 <body>
@@ -467,6 +485,7 @@ body.testmode .tflag{display:flex}
     <button class="btn btn-ghost" id="prevBtn" type="button">이전</button>
     <button class="btn btn-primary" id="nextBtn" type="button">다음 영역으로</button>
   </div>
+  <p class="pager-sub" id="pagerSub" hidden><a class="link" href="index.html">시작 화면으로 · 응답은 저장돼요</a></p>
   <p class="notice" id="notice" role="status"></p>
 
   <section id="results" hidden aria-labelledby="resTitle">
@@ -486,8 +505,11 @@ body.testmode .tflag{display:flex}
         <button class="link" id="editBtn" type="button">처음 페이지부터 응답 수정하기</button>
         <button class="link reset-btn" id="resetBtn2" type="button">내 응답 지우기</button>
       </div>
+      <p class="shared-note">공용 기기에서 하셨다면 ‘내 응답 지우기’를 누르고, 저장한 PDF도 지운 뒤 나가 주세요.</p>
     </div>
     <div id="crossBox"></div>
+    <div class="tools"><a class="link" href="index.html">시작 화면으로</a><button class="link" id="shareBtn" type="button">이 셀프 체크 공유하기</button></div>
+    <p class="pdfstatus" id="shareStatus" role="status" style="text-align:center"></p>
   </section>
 
   <section class="refs" id="refs" aria-labelledby="refTitle">
@@ -537,34 +559,34 @@ body.testmode .tflag{display:flex}
     <details>
       <summary>참고 자료</summary>
       <ol>
-        <li>Kelley, R. E. (1988). In praise of followers. <i>Harvard Business Review</i>, 66(6), 142–148. 원문: <a href="https://engineering.yale.edu/application/files/8617/4060/7141/Kelley_-_In_Praise_of_Followers.pdf" target="_blank" rel="noopener">engineering.yale.edu</a></li>
-        <li>Chaleff, I. (2009). <i>The Courageous Follower: Standing Up to and for Our Leaders</i> (3rd ed.). Berrett-Koehler. 목차·발췌: <a href="https://www.bkconnection.com/static/The_Courageous_Follower_3rd_EXCERPT.pdf" target="_blank" rel="noopener">bkconnection.com</a></li>
-        <li>Uhl-Bien, M., Riggio, R. E., Lowe, K. B., &amp; Carsten, M. K. (2014). Followership theory: A review and research agenda. <i>The Leadership Quarterly</i>, 25(1), 83–104. 초록: <a href="https://www.instituteofcoaching.org/resources/followership-theory-review-and-research-agenda" target="_blank" rel="noopener">instituteofcoaching.org</a></li>
-        <li>Gabarro, J. J., &amp; Kotter, J. P. (1980; 2005 재수록). Managing your boss. <i>Harvard Business Review</i>, January 2005, 92–99. 재수록본: <a href="https://weli.pedsanesthesia.org/wp-content/uploads/2020/03/Gabarro-and-Kotter-2005-Managing-your-boss.pdf" target="_blank" rel="noopener">weli.pedsanesthesia.org</a></li>
-        <li>Morrison, E. W. (2014). Employee voice and silence. <i>Annual Review of Organizational Psychology and Organizational Behavior</i>, 1, 173–197. <a href="https://doi.org/10.1146/annurev-orgpsych-031413-091328" target="_blank" rel="noopener">doi.org</a></li>
-        <li>Morrison, E. W., &amp; Phelps, C. C. (1999). Taking charge at work: Extrarole efforts to initiate workplace change. <i>Academy of Management Journal</i>, 42(4), 403–419. 서지: <a href="https://academicnewsletter.sufe.edu.cn/info/363427" target="_blank" rel="noopener">academicnewsletter.sufe.edu.cn</a>. 척도 항목(Table 1, p. 410) 재수록본: <a href="https://scales.arabpsychology.com/s/taking-charge-scale/" target="_blank" rel="noopener">scales.arabpsychology.com</a></li>
-        <li>Parker, S. K., Bindl, U. K., &amp; Strauss, K. (2010). Making things happen: A model of proactive motivation. <i>Journal of Management</i>, 36(4), 827–856. 초록: <a href="https://researchonline.lse.ac.uk/id/eprint/50019" target="_blank" rel="noopener">researchonline.lse.ac.uk</a></li>
-        <li>Cohen, A. R., &amp; Bradford, D. L. (2005). <i>Influence without authority</i> (2nd ed.). Wiley. 12장 소개글과 목차: <a href="https://www.oreilly.com/library/view/influence-without-authority/9780471463306/ch12.html" target="_blank" rel="noopener">oreilly.com</a></li>
-        <li>Yukl, G., &amp; Tracey, J. B. (1992). Consequences of influence tactics used with subordinates, peers, and the boss. <i>Journal of Applied Psychology</i>, 77(4), 525–535. <a href="https://ecommons.cornell.edu/entities/publication/dac8058b-4d90-464e-86ed-e6178b6533ba" target="_blank" rel="noopener">ecommons.cornell.edu</a></li>
-        <li>Falbe, C. M., &amp; Yukl, G. (1992). Consequences for managers of using single influence tactics and combinations of tactics. <i>Academy of Management Journal</i>, 35(3), 638–652. 서지·초록 수준으로 확인: <a href="https://academicnewsletter.sufe.edu.cn/info/364009" target="_blank" rel="noopener">academicnewsletter.sufe.edu.cn</a></li>
-        <li>Claessens, B. J. C., van Eerde, W., Rutte, C. G., &amp; Roe, R. A. (2007). A review of the time management literature. <i>Personnel Review</i>, 36(2), 255–276. <a href="https://doi.org/10.1108/00483480710726136" target="_blank" rel="noopener">doi.org</a></li>
-        <li>Covey, S. R. (1989). <i>The 7 Habits of Highly Effective People</i>. 시간관리 매트릭스 소개 글로만 확인: <a href="https://timingapp.com/blog/time-management-matrix/" target="_blank" rel="noopener">timingapp.com</a></li>
-        <li>Ashford, S. J., Blatt, R., &amp; VandeWalle, D. (2003). Reflections on the looking glass: A review of research on feedback-seeking behavior in organizations. <i>Journal of Management</i>, 29(6), 773–799. 초록: <a href="https://cris.biu.ac.il/en/publications/reflections-on-the-looking-glass-a-review-of-research-on-feedback/" target="_blank" rel="noopener">cris.biu.ac.il</a></li>
-        <li>Anseel, F., Beatty, A. S., Shen, W., Lievens, F., &amp; Sackett, P. R. (2015). How are we doing after 30 years? A meta-analytic review of the antecedents and outcomes of feedback-seeking behavior. <i>Journal of Management</i>, 41(1), 318–348. <a href="https://core.ac.uk/download/155249979.pdf" target="_blank" rel="noopener">core.ac.uk</a></li>
-        <li>Gong, Y., Wang, M., Huang, J.-C., &amp; Cheung, S. Y. (2017). Toward a goal orientation–based feedback-seeking typology: Implications for employee performance outcomes. <i>Journal of Management</i>, 43(4), 1234–1260. <a href="https://doi.org/10.1177/0149206314551797" target="_blank" rel="noopener">doi.org</a></li>
-        <li>Locke, E. A., &amp; Latham, G. P. (2002). Building a practically useful theory of goal setting and task motivation: A 35-year odyssey. <i>American Psychologist</i>, 57(9), 705–717. 원문: <a href="https://goal-lab.psych.umn.edu/orgpsych/2020/readings/5.%20Motivation/Locke%20&%20Latham%20(2002).pdf" target="_blank" rel="noopener">goal-lab.psych.umn.edu</a></li>
-        <li>Van Dyne, L., &amp; LePine, J. A. (1998). Helping and voice extra-role behaviors: Evidence of construct and predictive validity. <i>Academy of Management Journal</i>, 41(1), 108–119. 서지: <a href="https://academicnewsletter.sufe.edu.cn/info/363671" target="_blank" rel="noopener">academicnewsletter.sufe.edu.cn</a>. 척도 항목(Table 1, p. 112) 재수록본: <a href="https://scales.arabpsychology.com/s/helping-and-voice-behaviors-scale/" target="_blank" rel="noopener">scales.arabpsychology.com</a></li>
-        <li>Wang, S., &amp; Noe, R. A. (2010). Knowledge sharing: A review and directions for future research. <i>Human Resource Management Review</i>, 20(2), 115–131. 초록: <a href="https://scinapse.io/papers/1971931485" target="_blank" rel="noopener">scinapse.io</a></li>
-        <li>Sonnentag, S., &amp; Fritz, C. (2007). The Recovery Experience Questionnaire: Development and validation of a measure for assessing recuperation and unwinding from work. <i>Journal of Occupational Health Psychology</i>, 12(3), 204–221. <a href="https://pubmed.ncbi.nlm.nih.gov/17638488/" target="_blank" rel="noopener">pubmed.ncbi.nlm.nih.gov</a></li>
-        <li>Gross, J. J., &amp; John, O. P. (2003). Individual differences in two emotion regulation processes: Implications for affect, relationships, and well-being. <i>Journal of Personality and Social Psychology</i>, 85(2), 348–362. <a href="https://onlineacademiccommunity.uvic.ca/implicitassociationtestsyessir/wp-content/uploads/sites/9812/2025/12/gross-john-2003.pdf" target="_blank" rel="noopener">uvic.ca</a></li>
-        <li>Di Stefano, G., Gino, F., Pisano, G. P., &amp; Staats, B. R. (2014). Learning by thinking: How reflection aids performance. Harvard Business School Working Paper 14-093 (2014년 3월 판. 이후 판의 제목은 확인하지 못했어요). <a href="https://doi.org/10.2139/ssrn.2414478" target="_blank" rel="noopener">doi.org (SSRN)</a></li>
-        <li>Gallup. Q12® Question Summary. <a href="https://gallup.com/workplace/356045/q12-question-summary.aspx" target="_blank" rel="noopener">gallup.com</a></li>
-        <li>Frese, M., &amp; Fay, D. (2001). Personal initiative: An active performance concept for work in the 21st century. <i>Research in Organizational Behavior</i>, 23, 133–187. <a href="https://doi.org/10.1016/S0191-3085(01)23005-6" target="_blank" rel="noopener">doi.org</a></li>
-        <li>Zhu, M., Yang, Y., &amp; Hsee, C. K. (2018). The mere urgency effect. <i>Journal of Consumer Research</i>, 45(3), 673–690. 초록: <a href="https://acnpsearch.tweb-dev.unibo.it/singlejournalindex/60282950" target="_blank" rel="noopener">acnpsearch.tweb-dev.unibo.it</a></li>
-        <li>Eyal, T., Steffel, M., &amp; Epley, N. (2018). Perspective mistaking: Accurately understanding the mind of another requires getting perspective, not taking perspective. <i>Journal of Personality and Social Psychology</i>, 114(4), 547–571. <a href="https://doi.org/10.1037/pspa0000115" target="_blank" rel="noopener">doi.org</a></li>
-        <li>Seijts, G. H., &amp; Latham, G. P. (2005). Learning versus performance goals: When should each be used? <i>Academy of Management Executive</i>, 19(1), 124–131. <a href="https://wku.edu/cebs/doctorate/documents/readings/seijts_latham_2005_learning_vs_performance_goals.pdf" target="_blank" rel="noopener">wku.edu</a></li>
-        <li>Seijts, G. H., Latham, G. P., Tasa, K., &amp; Latham, B. W. (2004). Goal setting and goal orientation: An integration of two different yet related literatures. <i>Academy of Management Journal</i>, 47(2), 227–239. <a href="https://doi.org/10.5465/20159574" target="_blank" rel="noopener">doi.org</a></li>
-        <li>Anseel, F., Lievens, F., &amp; Schollaert, E. (2009). Reflection as a strategy to enhance task performance after feedback. <i>Organizational Behavior and Human Decision Processes</i>, 110(1), 23–35. <a href="https://doi.org/10.1016/j.obhdp.2009.05.003" target="_blank" rel="noopener">doi.org</a></li>
+        <li>Kelley, R. E. (1988). In praise of followers. <i>Harvard Business Review</i>, 66(6), 142–148. 원문: <a href="https://engineering.yale.edu/application/files/8617/4060/7141/Kelley_-_In_Praise_of_Followers.pdf" target="_blank" rel="noopener noreferrer">engineering.yale.edu</a></li>
+        <li>Chaleff, I. (2009). <i>The Courageous Follower: Standing Up to and for Our Leaders</i> (3rd ed.). Berrett-Koehler. 목차·발췌: <a href="https://www.bkconnection.com/static/The_Courageous_Follower_3rd_EXCERPT.pdf" target="_blank" rel="noopener noreferrer">bkconnection.com</a></li>
+        <li>Uhl-Bien, M., Riggio, R. E., Lowe, K. B., &amp; Carsten, M. K. (2014). Followership theory: A review and research agenda. <i>The Leadership Quarterly</i>, 25(1), 83–104. 초록: <a href="https://www.instituteofcoaching.org/resources/followership-theory-review-and-research-agenda" target="_blank" rel="noopener noreferrer">instituteofcoaching.org</a></li>
+        <li>Gabarro, J. J., &amp; Kotter, J. P. (1980; 2005 재수록). Managing your boss. <i>Harvard Business Review</i>, January 2005, 92–99. 재수록본: <a href="https://weli.pedsanesthesia.org/wp-content/uploads/2020/03/Gabarro-and-Kotter-2005-Managing-your-boss.pdf" target="_blank" rel="noopener noreferrer">weli.pedsanesthesia.org</a></li>
+        <li>Morrison, E. W. (2014). Employee voice and silence. <i>Annual Review of Organizational Psychology and Organizational Behavior</i>, 1, 173–197. <a href="https://doi.org/10.1146/annurev-orgpsych-031413-091328" target="_blank" rel="noopener noreferrer">doi.org</a></li>
+        <li>Morrison, E. W., &amp; Phelps, C. C. (1999). Taking charge at work: Extrarole efforts to initiate workplace change. <i>Academy of Management Journal</i>, 42(4), 403–419. 서지: <a href="https://academicnewsletter.sufe.edu.cn/info/363427" target="_blank" rel="noopener noreferrer">academicnewsletter.sufe.edu.cn</a>. 척도 항목(Table 1, p. 410) 재수록본: <a href="https://scales.arabpsychology.com/s/taking-charge-scale/" target="_blank" rel="noopener noreferrer">scales.arabpsychology.com</a></li>
+        <li>Parker, S. K., Bindl, U. K., &amp; Strauss, K. (2010). Making things happen: A model of proactive motivation. <i>Journal of Management</i>, 36(4), 827–856. 초록: <a href="https://researchonline.lse.ac.uk/id/eprint/50019" target="_blank" rel="noopener noreferrer">researchonline.lse.ac.uk</a></li>
+        <li>Cohen, A. R., &amp; Bradford, D. L. (2005). <i>Influence without authority</i> (2nd ed.). Wiley. 12장 소개글과 목차: <a href="https://www.oreilly.com/library/view/influence-without-authority/9780471463306/ch12.html" target="_blank" rel="noopener noreferrer">oreilly.com</a></li>
+        <li>Yukl, G., &amp; Tracey, J. B. (1992). Consequences of influence tactics used with subordinates, peers, and the boss. <i>Journal of Applied Psychology</i>, 77(4), 525–535. <a href="https://ecommons.cornell.edu/entities/publication/dac8058b-4d90-464e-86ed-e6178b6533ba" target="_blank" rel="noopener noreferrer">ecommons.cornell.edu</a></li>
+        <li>Falbe, C. M., &amp; Yukl, G. (1992). Consequences for managers of using single influence tactics and combinations of tactics. <i>Academy of Management Journal</i>, 35(3), 638–652. 서지·초록 수준으로 확인: <a href="https://academicnewsletter.sufe.edu.cn/info/364009" target="_blank" rel="noopener noreferrer">academicnewsletter.sufe.edu.cn</a></li>
+        <li>Claessens, B. J. C., van Eerde, W., Rutte, C. G., &amp; Roe, R. A. (2007). A review of the time management literature. <i>Personnel Review</i>, 36(2), 255–276. <a href="https://doi.org/10.1108/00483480710726136" target="_blank" rel="noopener noreferrer">doi.org</a></li>
+        <li>Covey, S. R. (1989). <i>The 7 Habits of Highly Effective People</i>. 시간관리 매트릭스 소개 글로만 확인: <a href="https://timingapp.com/blog/time-management-matrix/" target="_blank" rel="noopener noreferrer">timingapp.com</a></li>
+        <li>Ashford, S. J., Blatt, R., &amp; VandeWalle, D. (2003). Reflections on the looking glass: A review of research on feedback-seeking behavior in organizations. <i>Journal of Management</i>, 29(6), 773–799. 초록: <a href="https://cris.biu.ac.il/en/publications/reflections-on-the-looking-glass-a-review-of-research-on-feedback/" target="_blank" rel="noopener noreferrer">cris.biu.ac.il</a></li>
+        <li>Anseel, F., Beatty, A. S., Shen, W., Lievens, F., &amp; Sackett, P. R. (2015). How are we doing after 30 years? A meta-analytic review of the antecedents and outcomes of feedback-seeking behavior. <i>Journal of Management</i>, 41(1), 318–348. <a href="https://core.ac.uk/download/155249979.pdf" target="_blank" rel="noopener noreferrer">core.ac.uk</a></li>
+        <li>Gong, Y., Wang, M., Huang, J.-C., &amp; Cheung, S. Y. (2017). Toward a goal orientation–based feedback-seeking typology: Implications for employee performance outcomes. <i>Journal of Management</i>, 43(4), 1234–1260. <a href="https://doi.org/10.1177/0149206314551797" target="_blank" rel="noopener noreferrer">doi.org</a></li>
+        <li>Locke, E. A., &amp; Latham, G. P. (2002). Building a practically useful theory of goal setting and task motivation: A 35-year odyssey. <i>American Psychologist</i>, 57(9), 705–717. 원문: <a href="https://goal-lab.psych.umn.edu/orgpsych/2020/readings/5.%20Motivation/Locke%20&%20Latham%20(2002).pdf" target="_blank" rel="noopener noreferrer">goal-lab.psych.umn.edu</a></li>
+        <li>Van Dyne, L., &amp; LePine, J. A. (1998). Helping and voice extra-role behaviors: Evidence of construct and predictive validity. <i>Academy of Management Journal</i>, 41(1), 108–119. 서지: <a href="https://academicnewsletter.sufe.edu.cn/info/363671" target="_blank" rel="noopener noreferrer">academicnewsletter.sufe.edu.cn</a>. 척도 항목(Table 1, p. 112) 재수록본: <a href="https://scales.arabpsychology.com/s/helping-and-voice-behaviors-scale/" target="_blank" rel="noopener noreferrer">scales.arabpsychology.com</a></li>
+        <li>Wang, S., &amp; Noe, R. A. (2010). Knowledge sharing: A review and directions for future research. <i>Human Resource Management Review</i>, 20(2), 115–131. 초록: <a href="https://scinapse.io/papers/1971931485" target="_blank" rel="noopener noreferrer">scinapse.io</a></li>
+        <li>Sonnentag, S., &amp; Fritz, C. (2007). The Recovery Experience Questionnaire: Development and validation of a measure for assessing recuperation and unwinding from work. <i>Journal of Occupational Health Psychology</i>, 12(3), 204–221. <a href="https://pubmed.ncbi.nlm.nih.gov/17638488/" target="_blank" rel="noopener noreferrer">pubmed.ncbi.nlm.nih.gov</a></li>
+        <li>Gross, J. J., &amp; John, O. P. (2003). Individual differences in two emotion regulation processes: Implications for affect, relationships, and well-being. <i>Journal of Personality and Social Psychology</i>, 85(2), 348–362. <a href="https://onlineacademiccommunity.uvic.ca/implicitassociationtestsyessir/wp-content/uploads/sites/9812/2025/12/gross-john-2003.pdf" target="_blank" rel="noopener noreferrer">uvic.ca</a></li>
+        <li>Di Stefano, G., Gino, F., Pisano, G. P., &amp; Staats, B. R. (2014). Learning by thinking: How reflection aids performance. Harvard Business School Working Paper 14-093 (2014년 3월 판. 이후 판의 제목은 확인하지 못했어요). <a href="https://doi.org/10.2139/ssrn.2414478" target="_blank" rel="noopener noreferrer">doi.org (SSRN)</a></li>
+        <li>Gallup. Q12® Question Summary. <a href="https://gallup.com/workplace/356045/q12-question-summary.aspx" target="_blank" rel="noopener noreferrer">gallup.com</a></li>
+        <li>Frese, M., &amp; Fay, D. (2001). Personal initiative: An active performance concept for work in the 21st century. <i>Research in Organizational Behavior</i>, 23, 133–187. <a href="https://doi.org/10.1016/S0191-3085(01)23005-6" target="_blank" rel="noopener noreferrer">doi.org</a></li>
+        <li>Zhu, M., Yang, Y., &amp; Hsee, C. K. (2018). The mere urgency effect. <i>Journal of Consumer Research</i>, 45(3), 673–690. 초록: <a href="https://acnpsearch.tweb-dev.unibo.it/singlejournalindex/60282950" target="_blank" rel="noopener noreferrer">acnpsearch.tweb-dev.unibo.it</a></li>
+        <li>Eyal, T., Steffel, M., &amp; Epley, N. (2018). Perspective mistaking: Accurately understanding the mind of another requires getting perspective, not taking perspective. <i>Journal of Personality and Social Psychology</i>, 114(4), 547–571. <a href="https://doi.org/10.1037/pspa0000115" target="_blank" rel="noopener noreferrer">doi.org</a></li>
+        <li>Seijts, G. H., &amp; Latham, G. P. (2005). Learning versus performance goals: When should each be used? <i>Academy of Management Executive</i>, 19(1), 124–131. <a href="https://wku.edu/cebs/doctorate/documents/readings/seijts_latham_2005_learning_vs_performance_goals.pdf" target="_blank" rel="noopener noreferrer">wku.edu</a></li>
+        <li>Seijts, G. H., Latham, G. P., Tasa, K., &amp; Latham, B. W. (2004). Goal setting and goal orientation: An integration of two different yet related literatures. <i>Academy of Management Journal</i>, 47(2), 227–239. <a href="https://doi.org/10.5465/20159574" target="_blank" rel="noopener noreferrer">doi.org</a></li>
+        <li>Anseel, F., Lievens, F., &amp; Schollaert, E. (2009). Reflection as a strategy to enhance task performance after feedback. <i>Organizational Behavior and Human Decision Processes</i>, 110(1), 23–35. <a href="https://doi.org/10.1016/j.obhdp.2009.05.003" target="_blank" rel="noopener noreferrer">doi.org</a></li>
       </ol>
     </details>
     <div class="privacy" id="privacy">
@@ -572,15 +594,15 @@ body.testmode .tflag{display:flex}
       <ul>
         <li>이 진단지는 이름, 연락처, 소속처럼 나를 알아볼 수 있는 정보를 묻지 않아요.</li>
         <li>응답은 지금 쓰는 기기의 브라우저에만 저장되고, 운영자를 포함해 누구에게도 전송되지 않아요. PDF 리포트도 이 기기 안에서 만들어져 바로 저장돼요.</li>
-        <li>화면을 보여주기 위해 글꼴(Google Fonts)과 PDF 도구(cdnjs)를 외부에서 불러와요. 이때 이 서비스들과 페이지를 제공하는 호스팅 서비스에 접속 정보(IP 주소 등)가 전달될 수 있으며, 각 서비스의 방침에 따라 처리돼요.</li>
+        <li>글꼴과 PDF 도구도 이 사이트의 파일을 그대로 쓰고, 다른 서비스에서 불러오지 않아요. 다만 페이지를 제공하는 호스팅 서비스(GitHub Pages)에는 접속 정보(IP 주소 등)가 전달될 수 있으며, 서비스의 방침에 따라 처리돼요.</li>
         <li>저장된 응답은 “내 응답 지우기”를 누르거나 브라우저의 방문 기록·사이트 데이터를 삭제하면 지워져요.</li>
       </ul>
     </div>
   </section>
 
 </div></main>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="lib/jspdf.umd.min.js"></script>
+<script src="lib/html2canvas.min.js"></script>
 <script>
 const DOMAINS = [
   { id:'1', name:'상사와의 파트너십', subs:[ { name:'', items:[
@@ -655,7 +677,12 @@ DOMAINS.forEach(d => d.subs.forEach(s => s.items.forEach(([code,text,f='']) => {
 const itemsOf = d => ALL.filter(i => i.domain === d);
 
 let answers = {};
-try { const raw = localStorage.getItem(KEY); if (raw) answers = JSON.parse(raw) || {}; } catch(e) { answers = {}; }
+// 브라우저 저장 공간의 값은 믿지 않고, 형식에 맞는 것만 받아요(같은 주소의 다른 페이지가 값을 바꿔 둘 수 있어요).
+const CODE_RE = /^[A-Z0-9]{1,2}-\d{1,2}$/, ANS_OK = new Set(['1', '2', '3', '4', 'na']);
+function cleanAnswers(o){ const r = {}; if (o && typeof o === 'object' && !Array.isArray(o)) for (const k of Object.keys(o)) { if (CODE_RE.test(k) && typeof o[k] === 'string' && ANS_OK.has(o[k])) r[k] = o[k]; } return r; }
+function cleanFlags(o){ const r = {}; if (o && typeof o === 'object' && !Array.isArray(o)) for (const k of Object.keys(o)) { if (CODE_RE.test(k) && o[k] === 1) r[k] = 1; } return r; }
+function countOr(v, d){ const n = Number(v); return Number.isInteger(n) && n >= 0 && n <= 1000 ? n : d; }
+try { const raw = localStorage.getItem(KEY); if (raw) answers = cleanAnswers(JSON.parse(raw)); } catch(e) { answers = {}; }
 // 문항의 뜻이 바뀌면 해당 문항의 이전 답만 지워요. 예: dropAnswers('r1', ['F1-1']);
 function dropAnswers(id, codes){
   try {
@@ -668,7 +695,7 @@ function dropAnswers(id, codes){
 }
 
 let flags = {};
-try { flags = JSON.parse(localStorage.getItem(KEY + ':flags') || '{}') || {}; } catch(e) { flags = {}; }
+try { flags = cleanFlags(JSON.parse(localStorage.getItem(KEY + ':flags') || '{}')); } catch(e) { flags = {}; }
 function saveFlags(){ try { localStorage.setItem(KEY + ':flags', JSON.stringify(flags)); } catch(e) {} }
 // 해당 상황 없음 선택지가 없는 문항에 남아 있는 이전 'na' 응답은 지워요.
 try {
@@ -679,7 +706,7 @@ try {
 dropAnswers('r1-fs4', ['FS-4']); // FS-4 문항 뜻 변경(피드백 돌아보기)
 function save(){ try { localStorage.setItem(KEY, JSON.stringify(answers)); } catch(e) {} saveMeta(); }
 
-const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function josa(word, withB, withoutB){
   const ch = String(word).replace(/[^가-힣]/g, '').slice(-1);
   if (!ch) return withB;
@@ -777,7 +804,7 @@ function selfInfo(){
   const rec = stats(['FS-2','FS-3'].map(c => ALL.find(i => i.code === c)));
   const SLAB = { 'FS-1': '감정 조절', 'FS-2': '일 생각에서 벗어나기', 'FS-3': '쉬는 시간 갖기', 'FS-4': '받은 피드백 돌아보기' };
   const weak = ALL.filter(i => i.domain.self && (answers[i.code] === '1' || answers[i.code] === '2'))
-    .map(i => `‘${SLAB[i.code] || i.code}’(${i.code}, ${answers[i.code]}점)`);
+    .map(i => `‘${SLAB[i.code] || i.code}’(${i.code}, ${esc(answers[i.code])}점)`);
   let kase = 'C';
   if (rec.mean != null && rec.mean < TH.lo) kase = 'A';
   else if (all.mean < TH.lo) kase = 'B';
@@ -796,7 +823,7 @@ function selfInfo(){
 
 function testSummaryText(){
   const fl = ALL.filter(i => flags[i.code]).map(i => `${i.code} ${i.text}`);
-  const ans = ALL.map(i => `${i.code}\t${answers[i.code] || '-'}`);
+  const ans = ALL.map(i => `${i.code}\t${esc(answers[i.code] || '-')}`);
   return '[표시한 문항]\n' + (fl.length ? fl.join('\n') : '없음') + '\n\n[응답]\n' + ans.join('\n');
 }
 function testCardHtml(){
@@ -883,7 +910,7 @@ function renderResults(){
     ? DOMAINS.filter(d => !d.self).map(d => {
         const its = lowItems.filter(i => i.domain === d).sort((a, b) => (+answers[a.code]) - (+answers[b.code]) || a.code.localeCompare(b.code));
         if (!its.length) return '';
-        return `<div class="lgroup"><div class="lghead"><b>${d.name}</b><span>${its.length}문항</span></div>${its.map(i => `<div class="litem"><span class="c">${i.code}</span><span class="t">${esc(i.text)}</span><span class="p">${answers[i.code]}점</span></div>`).join('')}</div>`;
+        return `<div class="lgroup"><div class="lghead"><b>${d.name}</b><span>${its.length}문항</span></div>${its.map(i => `<div class="litem"><span class="c">${i.code}</span><span class="t">${esc(i.text)}</span><span class="p">${esc(answers[i.code])}점</span></div>`).join('')}</div>`;
       }).join('')
     : `<p class="empty">1점이나 2점으로 답한 문항이 없어요.</p>`;
 
@@ -893,7 +920,7 @@ function renderResults(){
     const sb = band(sst.mean);
     const si = selfInfo(); const msg = si.msg;
     selfCard = `<div class="card"><span class="lbl">자기관리 점검</span><span class="big"><b>${sst.mean.toFixed(2)}</b><span class="badge ${sb}">${BAND[sb]}</span></span>${si.recMean != null ? `<small class="recline">회복 문항(FS-2·FS-3) 평균 ${si.recMean.toFixed(2)} · ${BAND[band(si.recMean)]}</small>` : ''}<p>${msg}</p>${testOn ? `<p class="empty">[테스트] 자기관리 판정 ${si.kase}</p>` : ''}
-      <ul class="mini">${itemsOf(selfD).map(i => `<li><span class="c">${i.code}</span><span>${esc(i.text)}</span><span class="p">${answers[i.code] || '-'}</span></li>`).join('')}</ul></div>`;
+      <ul class="mini">${itemsOf(selfD).map(i => `<li><span class="c">${i.code}</span><span>${esc(i.text)}</span><span class="p">${esc(answers[i.code] || '-')}</span></li>`).join('')}</ul></div>`;
   }
   const sig = ALL.filter(i => i.signal && answers[i.code] === 'na');
   const sigCard = `<div class="card"><span class="lbl">한 번 더 들여다볼 문항</span>${sig.length
@@ -916,7 +943,7 @@ function showPage(p){
   page = p;
   document.getElementById('intro').hidden = p !== 0;
   document.querySelectorAll('section.domain').forEach(s => { s.hidden = +s.dataset.page !== p; });
-  document.getElementById('pager').hidden = !(p >= 1 && p <= LAST);
+  document.getElementById('pager').hidden = !(p >= 1 && p <= LAST); document.getElementById('pagerSub').hidden = !(p >= 1 && p <= LAST);
   document.getElementById('bar').hidden = !(p >= 1 && p <= LAST);
   document.getElementById('results').hidden = p !== LAST + 1;
   document.getElementById('refs').hidden = !(p === 0 || p === LAST + 1);
@@ -1033,15 +1060,15 @@ function computeRecs(){
 }
 function recReason(x){
   const head = x.dom.self ? '낮게 답한 문항' : `${x.dom.name} 영역`;
-  if (x.lows.length) return `${head} · ${x.lows.map(i => `${i.code}(${answers[i.code]}점)`).join(', ')}`;
+  if (x.lows.length) return `${head} · ${x.lows.map(i => `${i.code}(${esc(answers[i.code])}점)`).join(', ')}`;
   return `${x.dom.name} 영역 · 평균 ${x.avg.toFixed(1)}점`;
 }
 function hunetCard(c){
-  return `<div class="copt"><span class="ctag">온라인 · 휴넷</span><a class="cname" href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.name)}</a><span class="cmeta">${esc(c.hours)} · ${esc(c.level)} · ${won(c.fee)}</span>${c.refund ? '<span class="cbadge">고용보험 환급 과정</span>' : ''}</div>`;
+  return `<div class="copt"><span class="ctag">온라인 · 휴넷</span><a class="cname" href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">${esc(c.name)}</a><span class="cmeta">${esc(c.hours)} · ${esc(c.level)} · ${won(c.fee)}</span>${c.refund ? '<span class="cbadge">고용보험 환급 과정</span>' : ''}</div>`;
 }
 function kpcCard(c){
   const lk = kpcLink(c);
-  return `<div class="copt"><span class="ctag">집합 교육 · KPC 한국생산성본부</span><span class="cname">${esc(c.name)}</span><span class="cmeta">${c.days}일(${c.hours}시간) · KPC 회원 ${c.feeM}만원 / 일반 ${c.feeG}만원</span><span class="cmeta">가장 빠른 일정 ${esc(c.next)}${c.count > 1 ? ` 외 ${c.count - 1}회` : ''}</span><span class="cmeta">문의 ${esc(c.tel)}</span><a class="clink" href="${lk.url}" target="_blank" rel="noopener">KPC 홈페이지 ${esc(lk.label)}에서 찾기 ›</a></div>`;
+  return `<div class="copt"><span class="ctag">집합 교육 · KPC 한국생산성본부</span><span class="cname">${esc(c.name)}</span><span class="cmeta">${c.days}일(${c.hours}시간) · KPC 회원 ${c.feeM}만원 / 일반 ${c.feeG}만원</span><span class="cmeta">가장 빠른 일정 ${esc(c.next)}${c.count > 1 ? ` 외 ${c.count - 1}회` : ''}</span><span class="cmeta">문의 ${esc(c.tel)}</span><a class="clink" href="${lk.url}" target="_blank" rel="noopener noreferrer">KPC 홈페이지 ${esc(lk.label)}에서 찾기 ›</a></div>`;
 }
 function recsEmptyText(long){
   const m = stats(ALL.filter(i => !i.domain.self)).mean;
@@ -1380,7 +1407,7 @@ function renderCross(){
   let answered = 0, total = SIB.total;
   try {
     const meta = JSON.parse(localStorage.getItem(SIB.key + ':meta') || 'null');
-    if (meta && meta.answered) { answered = meta.answered; total = meta.total || total; }
+    if (meta && meta.answered) { answered = countOr(meta.answered, 0); total = countOr(meta.total, total) || total; }
   } catch (e) {}
   const label = answered === 0 ? `${SIB.name} 해 보기` : (answered >= total ? `${SIB.name} 결과 보기` : `${SIB.name} 이어서 하기`);
   const href = SIB.file + (answered > 0 ? '#resume' : '');
@@ -1394,6 +1421,23 @@ function saveMeta(){
     else localStorage.removeItem(KEY + ':meta');
   } catch (e) {}
 }
+async function shareLink(status, title, text){
+  const url = location.href.split('#')[0].split('?')[0];
+  status.textContent = '';
+  if (navigator.share) {
+    try { await navigator.share({ title, text, url }); return; }
+    catch (e) { if (e && e.name === 'AbortError') return; }
+  }
+  try { await navigator.clipboard.writeText(url); status.textContent = '주소를 복사했어요. 붙여 넣어 보내 주세요.'; }
+  catch (e) {
+    const ta = document.createElement('textarea'); ta.value = url; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); status.textContent = '주소를 복사했어요. 붙여 넣어 보내 주세요.'; }
+    catch (e2) { status.textContent = '주소를 복사하지 못했어요. 주소창의 주소를 직접 복사해 주세요.'; }
+    ta.remove();
+  }
+}
+document.getElementById('shareBtn').addEventListener('click', () => shareLink(document.getElementById('shareStatus'), '팔로워십 셀프 체크', '최근 3개월 동안 한 행동을 떠올려 답하면, 잘하고 있는 것과 다음에 키우면 좋을 것을 찾을 수 있어요.'));
 saveMeta();
 renderForm();
 function setTestMode(on){
