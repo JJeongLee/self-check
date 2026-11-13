@@ -392,6 +392,12 @@ a.cname{text-decoration:underline;text-underline-offset:3px;text-decoration-colo
 .cross .hint{margin:4px 0 0;font-size:14px;color:var(--muted);line-height:1.6}
 .pager-sub{margin:10px 0 0;text-align:center}
 .shared-note{margin:0;font-size:13px;line-height:1.6;color:var(--muted);text-align:center}
+.rp-block.rp-tight{padding-bottom:0}
+.rp-ref1 ol{margin:0}
+.rp-ref1:not(.rp-cont) ol{margin:8px 0 0}
+.rp-cont .rp-cont-h{display:none}
+.rp-cont.show .rp-cont-h{display:block}
+.rp-cont.show ol{margin-top:8px}
 </style>
 </head>
 <body>
@@ -1138,9 +1144,9 @@ function buildReportBlocks(){
   const refList = (document.querySelector('.refs ol') || {}).innerHTML || '';
   const refItems = [...document.querySelectorAll('.refs ol > li')].map(li => li.innerHTML);
   blocks.push(`<section class="rp-refs"><h2>이 진단지의 근거</h2><p>${esc(refText)}</p></section>`);
-  for (let i = 0; i < refItems.length; i += 10) {
-    blocks.push(`<section class="rp-refs"><h2>참고 자료${i ? ' (이어서)' : ''}</h2><ol start="${i + 1}">${refItems.slice(i, i + 10).map(x => `<li>${x}</li>`).join('')}</ol></section>`);
-  }
+  refItems.forEach((x, i) => {
+    blocks.push(`<section class="rp-refs rp-ref1${i ? ' rp-cont' : ''}">${i ? '<h2 class="rp-cont-h">참고 자료 (이어서)</h2>' : '<h2>참고 자료</h2>'}<ol start="${i + 1}"><li>${x}</li></ol></section>`);
+  });
   return blocks;
 }
 
@@ -1160,7 +1166,7 @@ function layoutReport(){
   let body = newPage();
   buildReportBlocks().forEach(html => {
     const blk = document.createElement('div');
-    blk.className = 'rp-block';
+    blk.className = 'rp-block' + (html.includes('rp-ref1') ? ' rp-tight' : '');
     blk.innerHTML = html;
     body.appendChild(blk);
     if (body.scrollHeight > body.clientHeight + 1 && body.children.length > 1) {
@@ -1168,6 +1174,9 @@ function layoutReport(){
       body = newPage();
       body.appendChild(blk);
     }
+
+    const sec = blk.firstElementChild;
+    if (sec && sec.classList.contains('rp-cont') && body.children.length === 1) sec.classList.add('show');
   });
   pages.forEach((p, i) => {
     p.querySelector('.rp-foot').textContent = `${i + 1} / ${pages.length}`;
