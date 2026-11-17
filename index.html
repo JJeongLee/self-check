@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob:; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>셀프 체크 · 리더십과 팔로워십</title>
+<meta name="description" content="최근 3개월 동안 일하면서 한 행동을 떠올려 답해 보세요. 리더십과 팔로워십 중에서 골라 잘하고 있는 것과 다음에 키우면 좋을 것을 찾아볼 수 있어요.">
+<link rel="canonical" href="https://jjeonglee.github.io/self-check/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="셀프 체크">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="셀프 체크 · 리더십과 팔로워십">
+<meta property="og:description" content="최근 3개월 동안 일하면서 한 행동을 떠올려 답해 보세요. 리더십과 팔로워십 중에서 골라 잘하고 있는 것과 다음에 키우면 좋을 것을 찾아볼 수 있어요.">
+<meta property="og:url" content="https://jjeonglee.github.io/self-check/">
+<meta property="og:image" content="https://jjeonglee.github.io/self-check/og-index.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="셀프 체크 시작 화면: 리더십과 팔로워십 중에서 고르기">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="셀프 체크 · 리더십과 팔로워십">
+<meta name="twitter:description" content="최근 3개월 동안 일하면서 한 행동을 떠올려 답해 보세요. 리더십과 팔로워십 중에서 골라 잘하고 있는 것과 다음에 키우면 좋을 것을 찾아볼 수 있어요.">
+<meta name="twitter:image" content="https://jjeonglee.github.io/self-check/og-index.png">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+:root{
+  --bg:#F9F9F6; --surface:#FFFFFF; --ink:#16181D; --body:#3D4048; --muted:#60646D; --line:#E3E4E4; --chip:#EEEEEC;
+  --lead:#E4572E; --follow:#20409A;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#111214; --surface:#1A1B1E; --ink:#F1F1EF; --body:#CFD0D2; --muted:#9A9CA2; --line:#2B2C30; --chip:#232427;
+    --lead:#F07A52; --follow:#8EA3F2;
+    color-scheme:dark;
+  }
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--body);font-family:'SelfCheck Sans KR','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+main{max-width:760px;margin:0 auto;padding:64px 20px 56px;display:flex;flex-direction:column;gap:28px}
+h1{margin:0;font-weight:800;font-size:clamp(30px,6.4vw,42px);line-height:1.25;color:var(--ink);letter-spacing:-.025em}
+.lead{margin:0;font-size:17px;line-height:1.75;color:var(--body);max-width:36em}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+a.pick{display:flex;flex-direction:column;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 22px 20px;color:inherit;text-decoration:none;transition:border-color .15s}
+a.pick:hover{border-color:var(--ink)}
+a.pick:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.pick .name{display:flex;align-items:center;gap:10px}
+.pick .sw{width:10px;height:10px;border-radius:2px;background:var(--c);flex:0 0 auto}
+.pick h2{margin:0;font-size:20px;font-weight:600;color:var(--ink);line-height:1.4}
+.pick .who{margin:0;font-size:14px;line-height:1.7;color:var(--body)}
+.pick .facts{margin:0;font-size:13px;color:var(--muted)}
+.pick .state{display:none;flex-direction:column;gap:6px;font-size:13px;color:var(--body)}
+.pick .state.on{display:flex}
+.pick .bar{height:4px;background:var(--chip);border-radius:2px;overflow:hidden}
+.pick .bar i{display:block;height:100%;background:var(--c);width:0}
+.pick .go{margin-top:auto;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:14px;font-size:15px;font-weight:600;color:var(--ink)}
+.pick .go span:last-child{font-size:18px}
+.note{margin:0;font-size:14px;line-height:1.7;color:var(--body)}
+.small{margin:0;font-size:13px;line-height:1.7;color:var(--muted)}
+.small + .small{margin-top:-18px}
+.share{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.sharebtn{background:var(--surface);color:var(--ink);border:1px solid var(--ink);border-radius:6px;min-height:44px;padding:10px 20px;font:inherit;font-size:15px;font-weight:600;cursor:pointer}
+.sharebtn:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.share .small{margin:0}
+
+/* ===== v2 warm & calm theme ===== */
+:root{--bg:#F5EFE4;--surface:#FFFCF6;--ink:#2F2620;--body:#4E433A;--muted:#7A6D61;--line:#E6DCCB;--chip:#EFE6D6;--lead:#B4532F;--follow:#2E6266;--lead-soft:#F6E0D3;--follow-soft:#DCEAE6;--shadow:0 1px 2px rgba(60,40,20,.05),0 14px 34px -18px rgba(60,40,20,.28)}
+@media (prefers-color-scheme: dark){:root{--bg:#1D1915;--surface:#27211C;--ink:#F2EADF;--body:#D6CBBE;--muted:#A6998A;--line:#3A322A;--chip:#312A23;--lead:#E0875F;--follow:#7FB5B0;--lead-soft:#3E281E;--follow-soft:#1F3533;--shadow:0 14px 34px -18px rgba(0,0,0,.6)}}
+body{background-image:radial-gradient(900px 420px at 10% -5%,var(--lead-soft),transparent 60%),radial-gradient(900px 420px at 95% 20%,var(--follow-soft),transparent 60%);background-attachment:fixed}
+main{padding-top:88px;gap:32px}
+main::before{content:"SELF · CHECK";font-size:12px;letter-spacing:.28em;color:var(--muted);font-weight:600}
+h1{font-size:clamp(36px,8vw,56px);line-height:1.2}
+h1::after{content:"";display:block;width:64px;height:3px;border-radius:2px;margin-top:22px;background:linear-gradient(90deg,var(--lead) 50%,var(--follow) 50%)}
+.cards{gap:20px}
+a.pick{position:relative;overflow:hidden;border-radius:22px;padding:30px 26px 22px;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s,border-color .2s}
+a.pick::before{content:"";position:absolute;inset:0 0 auto;height:6px;background:var(--c)}
+a.pick::after{content:"";position:absolute;right:-60px;top:-60px;width:180px;height:180px;border-radius:50%;background:var(--c);opacity:.08}
+a.pick:hover{transform:translateY(-3px);border-color:var(--c)}
+.pick .sw{width:40px;height:40px;border-radius:14px;opacity:.9;box-shadow:0 8px 16px -8px var(--c)}
+.pick h2{font-weight:800;font-size:23px;letter-spacing:-.02em}
+.pick .facts{display:inline-block;align-self:flex-start;background:var(--chip);padding:5px 12px;border-radius:999px;color:var(--body)}
+.pick .bar{height:6px;border-radius:3px}
+.pick .go{color:var(--c);border-top-style:dashed}
+.pick .go span:last-child{display:inline-flex;width:36px;height:36px;border-radius:50%;align-items:center;justify-content:center;background:var(--c);color:var(--surface);transition:transform .2s}
+a.pick:hover .go span:last-child{transform:translateX(4px)}
+.note{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 20px}
+.sharebtn{border-radius:999px;border-color:var(--line);box-shadow:var(--shadow)}
+@media (prefers-reduced-motion: reduce){a.pick,.pick .go span:last-child{transition:none}}
+</style>
+<style>:root{--bg:#FFFFFF;--surface:#FFFFFF;--ink:#111827;--body:#374151;--muted:#6B7280;--line:#E5E7EB;--chip:#F3F4F6;--lead:#2F5BFF;--follow:#14B8A6;--lead-soft:#E8EEFF;--follow-soft:#DDF7F3;--shadow:0 1px 2px rgba(17,24,39,.04),0 14px 34px -18px rgba(17,24,39,.18)}@media (prefers-color-scheme: dark){:root{--bg:#0B1020;--surface:#121829;--ink:#F3F4F6;--body:#D1D5DB;--muted:#9CA3AF;--line:#1F2937;--chip:#1A2236;--lead:#7C9BFF;--follow:#2DD4BF;--lead-soft:#1B2550;--follow-soft:#0E3330;--shadow:0 14px 34px -18px rgba(0,0,0,.6)}}</style>
+</head>
+<body>
+<main>
+  <h1>리더십 · 팔로워십<br>셀프 체크</h1>
+  <p class="lead">최근 3개월 동안 일하면서 한 행동을 떠올려 답해 보세요. 잘하고 있는 것과 다음에 키우면 좋을 것을 함께 찾아드릴게요.</p>
+
+  <div class="cards">
+    <a class="pick" id="pick-leader" href="leader.html" style="--c:var(--lead)">
+      <div class="name"><span class="sw" aria-hidden="true"></span><h2>리더십 셀프 체크</h2></div>
+      <p class="who">직속 팀원이 있고, 현재 팀을 3개월 이상 이끌고 있는 팀장이에요.</p>
+      <p class="facts"><span class="n">35</span>문항 · 10~15분 · PDF 리포트 제공</p>
+      <div class="state" aria-live="polite"><span class="st"></span><div class="bar" aria-hidden="true"><i></i></div></div>
+      <div class="go"><span class="gl">시작하기</span><span aria-hidden="true">→</span></div>
+    </a>
+    <a class="pick" id="pick-follower" href="follower.html" style="--c:var(--follow)">
+      <div class="name"><span class="sw" aria-hidden="true"></span><h2>팔로워십 셀프 체크</h2></div>
+      <p class="who">직속 상사가 있고, 현재 팀에서 3개월 이상 일한 구성원이에요. 실무 경력은 대략 4년 이상을 권해요. 팀장이나 임원도 윗사람에게는 팔로워예요.</p>
+      <p class="facts"><span class="n">31</span>문항 · 10~15분 · PDF 리포트 제공</p>
+      <div class="state" aria-live="polite"><span class="st"></span><div class="bar" aria-hidden="true"><i></i></div></div>
+      <div class="go"><span class="gl">시작하기</span><span aria-hidden="true">→</span></div>
+    </a>
+  </div>
+
+  <p class="note">하나만 해도 되고, 팀장이라면 두 가지를 모두 해 볼 수도 있어요. 두 진단의 응답은 따로 저장돼요.</p>
+  <div class="share"><button class="sharebtn" id="shareBtn" type="button">링크 공유하기</button><span class="small" id="shareStatus" role="status"></span></div>
+  <p class="small">응답은 이 기기의 브라우저에만 저장되고, 어디에도 전송되지 않아요.</p>
+  <p class="small">연구와 대표적인 실무 모델을 바탕으로 설계한 자기 성찰용 도구이며, 통계적 타당화를 거친 표준화 검사는 아니에요.</p>
+</main>
+<script>
+// 문항 수가 바뀌면 total을 고쳐 주세요(각 진단이 저장한 값이 있으면 그 값을 우선 써요).
+const CARDS = [
+  { id: 'leader',   key: 'leader-diag-v1',   file: 'leader.html',   total: 35 },
+  { id: 'follower', key: 'follower-diag-v1', file: 'follower.html', total: 31 }
+];
+function countOr(v, d){ const n = Number(v); return Number.isInteger(n) && n >= 0 && n <= 1000 ? n : d; }
+function readState(c){
+  let answered = 0, total = c.total;
+  try {
+    const meta = JSON.parse(localStorage.getItem(c.key + ':meta') || 'null');
+    if (meta && meta.answered) { answered = countOr(meta.answered, 0); total = countOr(meta.total, total) || total; }
+    else {
+      const raw = localStorage.getItem(c.key);
+      if (raw) answered = Object.keys(JSON.parse(raw) || {}).length;
+    }
+  } catch (e) {}
+  return { answered, total };
+}
+CARDS.forEach(c => {
+  const el = document.getElementById('pick-' + c.id);
+  const { answered, total } = readState(c);
+  el.querySelector('.n').textContent = total;
+  if (answered > 0) {
+    const done = answered >= total;
+    el.href = c.file + '#resume';
+    el.querySelector('.gl').textContent = done ? '결과 보기' : '이어서 하기';
+    const st = el.querySelector('.state'); st.classList.add('on');
+    el.querySelector('.st').textContent = done ? '응답을 마쳤어요' : `답한 문항 ${answered}/${total}`;
+    el.querySelector('.bar i').style.width = Math.min(100, Math.round(answered / total * 100)) + '%';
+  }
+});
+async function shareLink(status, title, text){
+  const url = location.href.split('#')[0].split('?')[0];
+  status.textContent = '';
+  if (navigator.share) {
+    try { await navigator.share({ title, text, url }); return; }
+    catch (e) { if (e && e.name === 'AbortError') return; }
+  }
+  try { await navigator.clipboard.writeText(url); status.textContent = '주소를 복사했어요. 붙여 넣어 보내 주세요.'; }
+  catch (e) {
+    const ta = document.createElement('textarea'); ta.value = url; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); status.textContent = '주소를 복사했어요. 붙여 넣어 보내 주세요.'; }
+    catch (e2) { status.textContent = '주소를 복사하지 못했어요. 주소창의 주소를 직접 복사해 주세요.'; }
+    ta.remove();
+  }
+}
+document.getElementById('shareBtn').addEventListener('click', () => shareLink(document.getElementById('shareStatus'), '셀프 체크 · 리더십과 팔로워십', '최근 3개월 동안 한 행동을 떠올려 답하면, 잘하고 있는 것과 다음에 키우면 좋을 것을 찾을 수 있어요.'));
+</script>
+</body>
+</html>
