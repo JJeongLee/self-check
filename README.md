@@ -139,14 +139,3 @@ python3 -m http.server 8000
 | [IBM Plex Sans KR](https://github.com/IBM/plex) (부분 글꼴, 이름을 바꿔 `SelfCheck Sans KR`로 사용) | 화면과 PDF의 모든 글꼴 | SIL OFL 1.1 |
 
 각 라이선스 전문은 `lib/`와 `fonts/` 폴더 안에 있어요.
-
-## 라이선스
-
-[라이선스를 정해 주세요. 예: 코드는 MIT, 문항 문구와 근거 정리는 CC BY 4.0 또는 모든 권리 보유]
-
-`fonts/`와 `lib/` 안의 파일은 위 표의 각 라이선스를 따라요.
-
-## 만든 사람
-
-- [만든 사람 이름] · [연락 방법 또는 "의견은 Issues로 남겨 주세요"]
-- 기획, 문항 구성, 디자인은 [만든 사람 이름]이 정했고, 코드 작성과 자료 정리·점검은 AI(Claude)의 도움을 받았어요.
