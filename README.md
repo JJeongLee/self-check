@@ -125,7 +125,7 @@ python3 -m http.server 8000
 
 ## 배포 (GitHub Pages)
 
-1. 저장소 **Settings → Pages → Build and deployment**에서 **Deploy from a branch**, **main**, **/ (root)**를 골라요.
+1. 저장소 Settings → Pages → Build and deployment에서 Deploy from a branch, main, / (root)를 골라요.
 2. 파일 이름은 정확히 소문자 `index.html`이어야 해요(GitHub Pages는 대소문자를 구분해요).
 3. `fonts/`와 `lib/` **폴더째** 올려야 해요. 없으면 글꼴이 바뀌고 PDF 저장이 안 돼요. 폴더 안의 라이선스 파일은 지우지 마세요.
 4. 올린 뒤 1~2분 기다리면 `https://<계정>.github.io/<저장소 이름>/`에서 열려요.
